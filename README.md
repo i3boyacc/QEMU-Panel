@@ -1,2 +1,2 @@
 # QEMU-Panel
-QEMU的图形化设置工具
+Windows下QEMU的图形化设置工具
