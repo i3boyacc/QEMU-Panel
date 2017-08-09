@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -14,11 +14,6 @@ namespace QEMU_Panel
         public version()
         {
             InitializeComponent();
-        }
-
-        private void version_Load(object sender, EventArgs e)
-        {
-           
         }
     }
 }
