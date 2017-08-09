@@ -1,4 +1,4 @@
-﻿namespace QEMU_Panel
+namespace QEMU_Panel
 {
     partial class version
     {
@@ -49,11 +49,9 @@
             this.label2.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label2.Location = new System.Drawing.Point(18, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(354, 180);
+            this.label2.Size = new System.Drawing.Size(296, 60);
             this.label2.TabIndex = 1;
-            this.label2.Text = "QEMU Panel\r\n版本1.0 (内部版本160.1000)\r\nCopyleft 2017 追求i3的孩纸 && PC\'s Place\r\n\r\n如果可以，请向作" +
-    "者反馈您对本程序的意见及建议，\r\n本作者会认真对待收到的每一条反馈。\r\n联系方式：\r\n1. QQ（如果可以直接联系的话）\r\n2. E-mail: lini3ac" +
-    "c@outlook.com";
+            this.label2.Text = "QEMU Panel Tester Preview\r\n版本1.1.172\r\nCopyleft 2017 追求i3的孩纸 && PC\'s Place\r\n";
             // 
             // version
             // 
@@ -64,7 +62,6 @@
             this.Controls.Add(this.label1);
             this.Name = "version";
             this.Size = new System.Drawing.Size(405, 490);
-            this.Load += new System.EventHandler(this.version_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
