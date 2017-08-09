@@ -1,4 +1,4 @@
-﻿///运行QEMU的控件
+///运行QEMU的控件
 
 using System;
 using System.Collections.Generic;
@@ -21,20 +21,25 @@ namespace QEMU_Panel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (File.Exists(".\\qemu-system-x86_64.exe"))
+            string cpuarg, cpumarg, memarg, hdaarg, audioarg, flparg, netarg, timearg, cdromarg, bootarg, qemufilename;
+            if (cpu_mode.Text == "i386") qemufilename = "qemu-system-i386.exe";
+            else qemufilename = "qemu-system-x86_64.exe";
+            if (File.Exists(qemufilename))
             {
-                string cpuarg, cpumarg, memarg, hdaarg, audioarg, flparg, netarg, timearg, cdromarg, bootarg;
+                if ((File.Exists("\"" + hdd_img.Text + "\"") || hdd_img.Text == String.Empty)
+                && (File.Exists("\"" + flp_img.Text + "\"") || flp_img.Text == String.Empty)
+                && File.Exists("\"" + cdr_img.Text + "\"") || cdr_img.Text == String.Empty) ;
+                else MessageBox.Show("警告：我们无法找到您指定的硬盘、软盘或光盘镜像，模拟器可能会无法启动。", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (cpu_corenum.Text == String.Empty) { cpuarg = String.Empty; }
                 else
                 {
                     if (cpu_pnum.Text == String.Empty) { cpuarg = " -smp " + cpu_corenum.Text; }
                     else
                     {
-                        if(cpu_per_core_num.Text == String.Empty) { cpuarg = " -smp " + cpu_corenum.Text + ",sockets=" + cpu_pnum.Text; }
+                        if (cpu_per_core_num.Text == String.Empty) { cpuarg = " -smp " + cpu_corenum.Text + ",sockets=" + cpu_pnum.Text; }
                         else { cpuarg = " -smp " + cpu_corenum.Text + ",sockets=" + cpu_pnum.Text + ",cores=" + cpu_per_core_num.Text; }
                     }
                 } //处理器个数设置
-
                 if (cpu_model.Text == String.Empty) { cpumarg = String.Empty; }
                 else if (cpu_model.Text == "486") { cpumarg = " -cpu 486 "; }
                 else if (cpu_model.Text == "Intel Core Processor (Broadwell, no TSX)") { cpumarg = " -cpu Broadwell-noTSX "; }
@@ -45,7 +50,6 @@ namespace QEMU_Panel
                 else if (cpu_model.Text == "Intel Xeon E3-12xx v2 (Ivy Bridge)") { cpumarg = " -cpu IvyBridge "; }
                 else if (cpu_model.Text == "Intel Core i7 9xx (Nehalem Class Core i7)") { cpumarg = " -cpu Nehalem "; }
                 else if (cpu_model.Text == "AMD Opteron 240 (Gen 1 Class Opteron)") { cpumarg = " -cpu Opteron_G1 "; }
-
                 else if (cpu_model.Text == "AMD Opteron 22xx (Gen 2 Class Opteron)") { cpumarg = " -cpu Opteron_G2 "; }
                 else if (cpu_model.Text == "AMD Opteron 23xx (Gen 3 Class Opteron)") { cpumarg = " -cpu Opteron_G3 "; }
                 else if (cpu_model.Text == "AMD Opteron 62xx class CPU") { cpumarg = " -cpu Opteron_G4 "; }
@@ -83,8 +87,8 @@ namespace QEMU_Panel
                 else { hdaarg = " -hda " + "\"" + hdd_img.Text + "\""; }
                 //硬盘设置
 
-                if (aud_mod.Text == String.Empty) { audioarg = String.Empty; } 
-                else if(aud_mod.Text == "PC speaker") { audioarg = " -soundhw pcspk "; }
+                if (aud_mod.Text == String.Empty) { audioarg = String.Empty; }
+                else if (aud_mod.Text == "PC speaker") { audioarg = " -soundhw pcspk "; }
                 else if (aud_mod.Text == "Intel HD Audio") { audioarg = " -soundhw hda "; }
                 else if (aud_mod.Text == "CS4231A") { audioarg = " -soundhw cs4231a "; }
                 else if (aud_mod.Text == "Gravis Ultrasound GF1") { audioarg = " -soundhw gus "; }
@@ -107,7 +111,7 @@ namespace QEMU_Panel
                 netarg = " -net user";
                 //网卡设置
 
-                if(time_y.Text == String.Empty) { timearg = " -rtc base=localtime "; }
+                if (time_y.Text == String.Empty) { timearg = " -rtc base=localtime "; }
                 else if (time_m.Text == String.Empty) { timearg = " -rtc base=localtime "; }
                 else if (time_d.Text == String.Empty) { timearg = " -rtc base=localtime "; }
                 else
@@ -115,24 +119,27 @@ namespace QEMU_Panel
                     if (time_hour.Text == String.Empty) { timearg = " -rtc base=" + time_y.Text + "-" + time_m.Text + "-" + time_d.Text; }
                     else if (time_min.Text == String.Empty) { timearg = " -rtc base=" + time_y.Text + "-" + time_m.Text + "-" + time_d.Text; }
                     else if (time_sec.Text == String.Empty) { timearg = " -rtc base=" + time_y.Text + "-" + time_m.Text + "-" + time_d.Text; }
-                    else { timearg = " -rtc base=" + time_y.Text + "-" + time_m.Text + "-" + time_d.Text 
-                            + "T" + time_hour.Text + ":" + time_min.Text + ":" + time_sec.Text; }
+                    else
+                    {
+                        timearg = " -rtc base=" + time_y.Text + "-" + time_m.Text + "-" + time_d.Text
+                        + "T" + time_hour.Text + ":" + time_min.Text + ":" + time_sec.Text;
+                    }
                 }
                 //BIOS时间设置
 
-                if (boot_sel.Text == String.Empty) bootarg = " -boot menu=on ";
-                else if (boot_sel.Text == "(开启启动菜单，启动时手动选择)") bootarg = " -boot menu=on ";
+                if (boot_sel.Text == "(开启启动菜单，启动时手动选择)") bootarg = " -boot menu=on ";
                 else if (boot_sel.Text == "第一软盘驱动器") bootarg = " -boot a ";
                 else if (boot_sel.Text == "第一硬盘驱动器") bootarg = " -boot c ";
                 else if (boot_sel.Text == "光盘驱动器") bootarg = " -boot d ";
                 else bootarg = " -boot menu=on ";
-                string arg = cpuarg + cpumarg + memarg + hdaarg + audioarg + flparg + netarg + timearg + cdromarg  + bootarg + " " + add_arg.Text;
+                string arg = cpuarg + cpumarg + memarg + hdaarg + audioarg + flparg + netarg + timearg + cdromarg + bootarg + " " + add_arg.Text;
                 //MessageBox.Show("目标参数：" + arg, "目标参数", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 Process qemu = new Process();
                 ProcessStartInfo qemuinfo = new ProcessStartInfo();
                 qemu.StartInfo = qemuinfo;
                 qemuinfo.Arguments = arg;
-                qemuinfo.FileName = "qemu-system-x86_64.exe";
+                qemuinfo.FileName = qemufilename;
 
                 qemuinfo.CreateNoWindow = true;
                 qemuinfo.RedirectStandardInput = true;
@@ -141,9 +148,18 @@ namespace QEMU_Panel
                 qemuinfo.UseShellExecute = false;
                 //不创建命令行窗口
                 qemu.Start();
+
+
             }
-            else MessageBox.Show("无法启动虚拟机。\n原因：QEMU程序文件不存在（qemu-system-x86_64.exe）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            else
+            {
+                if (cpu_mode.Text == cpu_mode.Items[0].ToString()) MessageBox.Show("错误：无法启动模拟器，因为无法找到QEMU文件“qemu-system-i386.exe”\n请检查后重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("错误：无法启动模拟器，因为无法找到QEMU文件“qemu-system-x86_64.exe”\n请检查后重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -216,6 +232,12 @@ namespace QEMU_Panel
         private void label1_ForeColorChanged(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void easymode_Load(object sender, EventArgs e)
+        {
+            cpu_mode.Text = cpu_mode.Items[0].ToString();//默认选择第一个值
+            boot_sel.Text = boot_sel.Items[0].ToString();
         }
     }
 }
