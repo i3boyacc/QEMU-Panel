@@ -18,8 +18,8 @@ namespace QEMU_Panel
             InitializeComponent();
         }
 
-        public int num = 0, isblack = 0, selected = 0;
-        int r = 12, g = 81, b = 184;
+        public int num = 0, isblack = 0, selected = 0;//isblack--设置窗口颜色是黑还是白。0--黑色，1--白色。select--被选中的控件
+        int r = 12, g = 81, b = 184;//辅助配色的RGB值
         public easymode em;
         public version ver;
         public help hlp;
