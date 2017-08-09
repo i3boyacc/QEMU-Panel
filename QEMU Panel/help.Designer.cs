@@ -1,4 +1,4 @@
-﻿namespace QEMU_Panel
+namespace QEMU_Panel
 {
     partial class help
     {
