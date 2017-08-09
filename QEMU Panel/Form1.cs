@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+
 
 
 namespace QEMU_Panel
@@ -34,12 +35,14 @@ namespace QEMU_Panel
             
             panel3.Controls.Add(em);
             panel3.Controls.Add(ver);
-            panel3.Controls.Add(hlp);
+            panel3.Controls.Add(hlp);//在右侧面板加载启动模拟器、帮助、版本控件
 
             ver.Visible = false;
             hlp.Visible = false;
             int em_h = em.Height;
             panel3.AutoScrollMinSize = new Size(10, em_h);
+            
+            
             r = Settings1.Default.color_r;
             g = Settings1.Default.color_g;
             b = Settings1.Default.color_b;
