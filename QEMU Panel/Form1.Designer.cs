@@ -1,4 +1,4 @@
-﻿namespace QEMU_Panel
+namespace QEMU_Panel
 {
     partial class Form1
     {
@@ -67,6 +67,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.Controls.Add(this.panel_bt);
             this.panel1.Controls.Add(this.colorset);
@@ -110,7 +112,7 @@
             this.colorset.Controls.Add(this.color_black);
             this.colorset.Controls.Add(this.color_white);
             this.colorset.Controls.Add(this.label3);
-            this.colorset.Location = new System.Drawing.Point(2, 328);
+            this.colorset.Location = new System.Drawing.Point(0, 330);
             this.colorset.Name = "colorset";
             this.colorset.Size = new System.Drawing.Size(244, 191);
             this.colorset.TabIndex = 6;
@@ -322,7 +324,7 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.button5.Location = new System.Drawing.Point(0, 525);
+            this.button5.Location = new System.Drawing.Point(0, 527);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(248, 40);
             this.button5.TabIndex = 5;
@@ -408,6 +410,9 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
             this.panel3.Location = new System.Drawing.Point(248, 0);
             this.panel3.MinimumSize = new System.Drawing.Size(530, 0);
