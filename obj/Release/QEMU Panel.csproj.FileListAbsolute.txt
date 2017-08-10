@@ -1,0 +1,12 @@
+D:\文件\程序\QEMU-Panel\bin\Release\QEMU Panel.exe.config
+D:\文件\程序\QEMU-Panel\bin\Release\QEMU Panel.exe
+D:\文件\程序\QEMU-Panel\bin\Release\QEMU Panel.pdb
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU Panel.csprojResolveAssemblyReference.cache
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU_Panel.easymode.resources
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU_Panel.Form1.resources
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU_Panel.help.resources
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU_Panel.Properties.Resources.resources
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU_Panel.version.resources
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU Panel.csproj.GenerateResource.Cache
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU Panel.exe
+D:\文件\程序\QEMU-Panel\obj\Release\QEMU Panel.pdb
