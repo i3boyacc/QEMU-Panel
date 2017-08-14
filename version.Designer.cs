@@ -51,7 +51,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(320, 60);
             this.label2.TabIndex = 1;
-            this.label2.Text = "QEMU Panel Preview\r\n版本1.1.175\r\nCopyleft 追求i3的孩纸(lini3acc) && PC\'s Place\r\n";
+            this.label2.Text = "QEMU Panel Release Preview\r\n版本1.1.186\r\nCopyleft 追求i3的孩纸(lini3acc) && PC\'s Place\r\n" +
+    "";
             // 
             // version
             // 

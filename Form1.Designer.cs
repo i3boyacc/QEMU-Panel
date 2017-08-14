@@ -105,9 +105,9 @@
             this.colorset.Controls.Add(this.color_black);
             this.colorset.Controls.Add(this.color_white);
             this.colorset.Controls.Add(this.label3);
-            this.colorset.Location = new System.Drawing.Point(0, 330);
+            this.colorset.Location = new System.Drawing.Point(0, 331);
             this.colorset.Name = "colorset";
-            this.colorset.Size = new System.Drawing.Size(244, 191);
+            this.colorset.Size = new System.Drawing.Size(244, 190);
             this.colorset.TabIndex = 6;
             this.colorset.Visible = false;
             // 
