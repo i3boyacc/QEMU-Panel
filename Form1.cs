@@ -36,8 +36,7 @@ namespace QEMU_Panel
 
             ver.Visible = false;
             hlp.Visible = false;
-            int em_h = em.Height;
-            panel3.AutoScrollMinSize = new Size(10, em_h);
+            panel3.AutoScrollMinSize = new Size(10, em.Height);
          
             if(Settings1.Default.isblack==0)//设置默认颜色，白色或黑色
             {
@@ -57,17 +56,17 @@ namespace QEMU_Panel
             else
             {
                 color_black.Checked = true;
-                this.BackColor = Color.FromArgb(255, 32, 32, 32);
-                panel1.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                panel1.BackColor = Color.FromArgb(255, 48, 48, 48);
-                em.BackColor = Color.FromArgb(255, 32, 32, 32);
-                em.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                hlp.BackColor = Color.FromArgb(255, 32, 32, 32);
-                hlp.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                ver.BackColor = Color.FromArgb(255, 32, 32, 32);
-                ver.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                button3.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                button4.ForeColor = Color.FromArgb(255, 222, 222, 222);
+                this.BackColor = Color.FromArgb(255, 24, 24, 24);
+                panel1.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                panel1.BackColor = Color.FromArgb(255, 32, 32, 32);
+                em.BackColor = Color.FromArgb(255, 24, 24, 24);
+                em.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                hlp.BackColor = Color.FromArgb(255, 24, 24, 24);
+                hlp.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                ver.BackColor = Color.FromArgb(255, 24, 24, 24);
+                ver.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                button3.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                button4.ForeColor = Color.FromArgb(255, 233, 233, 233);
             }
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
         }
@@ -101,8 +100,8 @@ namespace QEMU_Panel
             }
             else
             {
-                button2.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                button3.ForeColor = Color.FromArgb(255, 222, 222, 222);
+                button2.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                button3.ForeColor = Color.FromArgb(255, 233, 233, 233);
             }
             selected = 2;
             int ver_h = ver.Height;
@@ -124,11 +123,12 @@ namespace QEMU_Panel
             }
             else
             {
-                button4.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                button2.ForeColor = Color.FromArgb(255, 222, 222, 222);
+                button4.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                button2.ForeColor = Color.FromArgb(255, 233, 233, 233);
             }
             selected = 1;
             panel_bt.Location = button3.Location;
+            panel3.AutoScrollMinSize = new Size(10, hlp.Height);
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
         }
 
@@ -144,8 +144,8 @@ namespace QEMU_Panel
             }
             else
             {
-                button4.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                button3.ForeColor = Color.FromArgb(255, 222, 222, 222);
+                button4.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                button3.ForeColor = Color.FromArgb(255, 233, 233, 233);
             }
             selected = 0;
             panel_bt.Location = button2.Location;
@@ -242,7 +242,7 @@ namespace QEMU_Panel
             {
                 this.BackColor = Color.White;
                 panel1.ForeColor = Color.Black;
-                panel1.BackColor = button2.BackColor = button3.BackColor = button4.BackColor = SystemColors.Menu;
+                panel1.BackColor = button2.BackColor = button3.BackColor = button4.BackColor = button5.BackColor = SystemColors.Menu;
                 em.BackColor = Color.White;
                 em.ForeColor = Color.Black;
                 hlp.BackColor = Color.White;
@@ -251,26 +251,26 @@ namespace QEMU_Panel
                 ver.ForeColor = Color.Black;
                 Settings1.Default.isblack = 0;
                 Settings1.Default.Save();
-                if (button2.ForeColor == Color.FromArgb(255, 222, 222, 222)) button2.ForeColor = Color.Black;
-                if (button3.ForeColor == Color.FromArgb(255, 222, 222, 222)) button3.ForeColor = Color.Black;
-                if (button4.ForeColor == Color.FromArgb(255, 222, 222, 222)) button4.ForeColor = Color.Black;
+                if (button2.ForeColor == Color.FromArgb(255, 233, 233, 233)) button2.ForeColor = Color.Black;
+                if (button3.ForeColor == Color.FromArgb(255, 233, 233, 233)) button3.ForeColor = Color.Black;
+                if (button4.ForeColor == Color.FromArgb(255, 233, 233, 233)) button4.ForeColor = Color.Black;
             }
             else
             {
-                this.BackColor = Color.FromArgb(255, 32, 32, 32);
-                panel1.ForeColor = Color.FromArgb(255,222,222,222);
-                panel1.BackColor = button2.BackColor =button3.BackColor = button4.BackColor = Color.FromArgb(255, 48, 48, 48);
-                em.BackColor = Color.FromArgb(255, 32, 32, 32);
-                em.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                hlp.BackColor = Color.FromArgb(255, 32, 32, 32);
-                hlp.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                ver.BackColor = Color.FromArgb(255, 32, 32, 32);
-                ver.ForeColor = Color.FromArgb(255, 222, 222, 222);
+                this.BackColor = Color.FromArgb(255, 24, 24, 24);
+                panel1.ForeColor = Color.FromArgb(255,233,233,233);
+                panel1.BackColor = button2.BackColor =button3.BackColor = button4.BackColor = button5.BackColor = Color.FromArgb(255, 32, 32, 32);
+                em.BackColor = Color.FromArgb(255, 24, 24, 24);
+                em.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                hlp.BackColor = Color.FromArgb(255, 24, 24, 24);
+                hlp.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                ver.BackColor = Color.FromArgb(255, 24, 24, 24);
+                ver.ForeColor = Color.FromArgb(255, 233, 233, 233);
                 Settings1.Default.isblack = 1;
                 Settings1.Default.Save();
-                if (button2.ForeColor == Color.Black) button2.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                if (button3.ForeColor == Color.Black) button3.ForeColor = Color.FromArgb(255, 222, 222, 222);
-                if (button4.ForeColor == Color.Black) button4.ForeColor = Color.FromArgb(255, 222, 222, 222);
+                if (button2.ForeColor == Color.Black) button2.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                if (button3.ForeColor == Color.Black) button3.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                if (button4.ForeColor == Color.Black) button4.ForeColor = Color.FromArgb(255, 233, 233, 233);
             }
         }
     }  

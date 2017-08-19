@@ -118,13 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label3.Text" xml:space="preserve">
-    <value>1. Q：这个程序是干什么的？它是如何工作的？
+    <value>
+1. Q：这个程序是干什么的？它是如何工作的？
     A：这个程序用于辅助用户设置QEMU。原版的QEMU需要命令行
     启动，但本程序将命令行的设置图形化。本程序将收集用户的设置
     并将其转化为QEMU启动参数启动QEMU。
 
 2. Q：QEMU CPU的性能怎么样？
-    A：QEMU CPU的性能很差，根据Fritz Chess Benchmark的测试，
+    A：QEMU CPU的性能很弱，根据Fritz Chess Benchmark的测试，
             QEMU CPU的测试得分约为Pentium III 1.0GHz的40%。另外
          CPU的总性能不随核心数的变化而变化。因此，这里我们建议
          您不要试用QEMU安装Windows Vista（NT6.0）及更高版本的
@@ -139,8 +140,10 @@
          硬盘：无硬盘
          软盘：无软驱
          光盘：无光驱
-         网络：host模式网络
-         BIOS时间：使用UTC时间
+         显卡：std型号
+         声卡：无声卡
+         网络：无网络，无端口映射
+         BIOS时间：使用宿主机时间
          引导项：按软盘--硬盘--光盘的顺序启动
          其它选项：无选项
 
@@ -154,6 +157,11 @@
          辑处理器个数；对于开启超线程的CPU，2*处理器个数*核心
          数=逻辑处理器个数。另外某些CPU型号（包括默认的型号）
          并不支持超线程。设置时也应该注意这些，错误的设置会导
-         致模拟器无法启动。</value>
+         致模拟器无法启动。
+
+5. Q: 附加参数如何设置？
+        A: 请参阅QEMU帮助文档（通常为.html或txt文件，如没有，
+           请在QEMU目录下运行 [qemu文件名] --help）
+ </value>
   </data>
 </root>

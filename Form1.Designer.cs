@@ -73,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(0, -6);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 573);
+            this.panel1.Size = new System.Drawing.Size(238, 573);
             this.panel1.TabIndex = 13;
             // 
             // panel_bt
@@ -407,10 +407,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
-            this.panel3.Location = new System.Drawing.Point(248, 0);
+            this.panel3.Location = new System.Drawing.Point(236, 0);
             this.panel3.MinimumSize = new System.Drawing.Size(530, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(536, 564);
+            this.panel3.Size = new System.Drawing.Size(548, 564);
             this.panel3.TabIndex = 6;
             // 
             // Form1

@@ -17,10 +17,10 @@ namespace QEMU_Panel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cpuarg, cpumarg, memarg, hdaarg, audioarg, flparg, netarg, timearg, cdromarg, bootarg, biosarg, vncarg, vgaarg, qemufilename;
+            string cpuarg, cpumarg, memarg, hdaarg, audioarg, flparg, netarg, timearg, cdromarg, bootarg, biosarg, vncarg, vgaarg, win2khack, usb, qemufilename;
             //cpuarg--CPU个数参数；cpumarg--CPU型号参数；memarg--内存大小参数；hdaarg--主硬盘参数；audioarg--声卡参数
             //flparg--软盘参数；netarg--网卡参数；timearg--模拟器时间参数；cdromarg--光驱参数；bootarg--启动项参数；qemufilename--要启动的QEMU文件名
-            //biosarg--第三方BIOS文件设置; vncarg--vnc参数
+            //biosarg--第三方BIOS文件设置; vncarg--vnc参数; win2khack-- 避免win2k安装磁盘已满的参数; usb--启用USB及USB键鼠支持的参数
             int vncport;//vnc端口号
             if (cpu_mode.Text == "i386") qemufilename = "qemu-system-i386.exe";
             else qemufilename = "qemu-system-x86_64.exe";
@@ -164,9 +164,18 @@ namespace QEMU_Panel
                 else vgaarg = String.Empty;
                 //VGA设置
 
-                string arg = cpuarg + cpumarg + memarg + hdaarg + audioarg + flparg + netarg + vncarg + timearg + cdromarg + bootarg + vgaarg + biosarg + " " + add_arg.Text;
+                if (usb_dev.Checked) usb = " -usb -device usb-kbd -device usb-mouse -device usb-tablet ";
+                else usb = "";
+                //USB设备及键鼠支持设置
+
+                if (win2k_hack.Checked) win2khack = " -win2k-hack ";
+                else win2khack = "";
+                //避免Win2k安装磁盘已满的Bug设置
+
+                string arg = cpuarg + cpumarg + memarg + hdaarg + audioarg + flparg + netarg + vncarg +
+                     timearg + cdromarg + bootarg + vgaarg + biosarg + usb + win2khack + add_arg.Text;
                 //生成启动参数
-                
+
                 Process qemu = new Process();
                 ProcessStartInfo qemuinfo = new ProcessStartInfo();
                 qemu.StartInfo = qemuinfo;
@@ -186,7 +195,7 @@ namespace QEMU_Panel
                 else MessageBox.Show("错误：无法启动模拟器，因为无法找到QEMU文件“qemu-system-x86_64.exe”\n请检查后重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog open_hda = new OpenFileDialog();
@@ -229,40 +238,78 @@ namespace QEMU_Panel
 
         private void label1_ForeColorChanged(object sender, EventArgs e)
         {
-            cpu_corenum.BackColor = label1.BackColor;
-            cpu_model.BackColor = label1.BackColor;
-            cpu_per_core_num.BackColor = label1.BackColor;
-            cpu_pnum.BackColor = label1.BackColor;
-            flp_img.BackColor = label1.BackColor;
-            cdr_img.BackColor = label1.BackColor;
-            hdd_img.BackColor = label1.BackColor;
-            time_d.BackColor = label1.BackColor;
-            time_y.BackColor = label1.BackColor;
-            time_m.BackColor = label1.BackColor;
-            time_hour.BackColor = label1.BackColor;
-            time_min.BackColor = label1.BackColor;
-            time_sec.BackColor = label1.BackColor;
-            mem_size.BackColor = label1.BackColor;
-            aud_mod.BackColor = label1.BackColor;
-            time_sec.BackColor = label1.BackColor;
-            cpu_corenum.ForeColor = label1.ForeColor;
-            cpu_model.ForeColor = label1.ForeColor;
-            cpu_per_core_num.ForeColor = label1.ForeColor;
-            cpu_pnum.ForeColor = label1.ForeColor;
-            flp_img.ForeColor = label1.ForeColor;
-            cdr_img.ForeColor = label1.ForeColor;
-            hdd_img.ForeColor = label1.ForeColor;
-            time_d.ForeColor = label1.ForeColor;
-            time_y.ForeColor = label1.ForeColor;
-            time_m.ForeColor = label1.ForeColor;
-            time_hour.ForeColor = label1.ForeColor;
-            time_min.ForeColor = label1.ForeColor;
-            time_sec.ForeColor = label1.ForeColor;
-            mem_size.ForeColor = label1.ForeColor;
-            aud_mod.ForeColor = label1.ForeColor;
-            if (label1.ForeColor == Color.Black) button1.BackColor = button2.BackColor = button3.BackColor = button4.BackColor = Color.FromArgb(255, 192, 192, 192);
-            else button1.BackColor = button2.BackColor = button3.BackColor = button4.BackColor = Color.FromArgb(255, 64, 64, 64);
-        }//当Label1的颜色被主窗口（Form1）更改时，将该控件内其它控件的颜色改成与Label1一致
+            cpu_corenum.BackColor
+            = cpu_model.BackColor
+            = cpu_per_core_num.BackColor
+            = cpu_pnum.BackColor
+            = flp_img.BackColor
+            = cdr_img.BackColor
+            = hdd_img.BackColor
+            = time_d.BackColor
+            = time_y.BackColor
+            = time_m.BackColor
+            = time_hour.BackColor
+            = time_min.BackColor
+            = time_sec.BackColor
+            = mem_size.BackColor
+            = aud_mod.BackColor
+            = bios_file.BackColor
+            = vga_mod.BackColor
+            = net_host_port.BackColor
+            = net_mod.BackColor
+            = net_vm_port.BackColor
+            = vnc_port.BackColor
+            = time_sec.BackColor
+            = add_arg.BackColor
+            = boot_sel.BackColor
+            = cpu_mode.BackColor
+            = label1.BackColor;
+            //在切换颜色时，将easymode（本控件）中所有控件的颜色更改为与Label1一致的颜色
+            //（从主窗口更改只有部分颜色会更改）
+            //本人水平低，不会父传子，只会这么搞，勿喷
+            //下面代码同
+
+            cpu_corenum.ForeColor
+            = cpu_model.ForeColor
+            = cpu_per_core_num.ForeColor
+            = cpu_pnum.ForeColor
+            = flp_img.ForeColor
+            = cdr_img.ForeColor
+            = hdd_img.ForeColor
+            = time_d.ForeColor
+            = time_y.ForeColor
+            = time_m.ForeColor
+            = time_hour.ForeColor
+            = time_min.ForeColor
+            = time_sec.ForeColor
+            = mem_size.ForeColor
+            = bios_file.ForeColor
+            = vga_mod.ForeColor
+            = net_host_port.ForeColor
+            = net_mod.ForeColor
+            = net_vm_port.ForeColor
+            = vnc_port.ForeColor
+            = aud_mod.ForeColor
+            = add_arg.ForeColor
+            = boot_sel.ForeColor
+            = cpu_mode.ForeColor
+            = label1.ForeColor;
+
+            if (label1.ForeColor == Color.Black)
+                button1.BackColor
+                    = button2.BackColor
+                    = button3.BackColor
+                    = button4.BackColor
+                    = button5.BackColor
+                    = Color.FromArgb(255, 192, 192, 192);
+            else
+                button1.BackColor
+                    = button2.BackColor
+                    = button3.BackColor
+                    = button4.BackColor
+                    = button5.BackColor
+                    = Color.FromArgb(255, 64, 64, 64);
+        }
 
         private void easymode_Load(object sender, EventArgs e)
         {

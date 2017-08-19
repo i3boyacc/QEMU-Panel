@@ -49,10 +49,9 @@
             this.label2.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label2.Location = new System.Drawing.Point(18, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(320, 60);
+            this.label2.Size = new System.Drawing.Size(331, 60);
             this.label2.TabIndex = 1;
-            this.label2.Text = "QEMU Panel Release Preview\r\n版本1.1.186\r\nCopyleft 追求i3的孩纸(lini3acc) && PC\'s Place\r\n" +
-    "";
+            this.label2.Text = "QEMU Panel\r\n版本1.1.190\r\nCopyright 追求i3的孩纸(lini3acc) && PC\'s Place\r\n";
             // 
             // version
             // 
