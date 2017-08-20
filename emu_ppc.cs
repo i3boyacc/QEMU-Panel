@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace QEMU_Panel
 {
-    public partial class help : UserControl
+    public partial class emu_ppc : UserControl
     {
-        public help()
+        public emu_ppc()
         {
             InitializeComponent();
         }

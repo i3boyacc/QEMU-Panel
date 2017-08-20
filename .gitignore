@@ -1,3 +1,6 @@
 
 *.cache
 LICENSE
+/bin/Release
+/obj/Release
+/bin/Release

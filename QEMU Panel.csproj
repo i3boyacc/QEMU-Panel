@@ -48,11 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="easymode.cs">
+    <Compile Include="emu_ppc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="easymode.Designer.cs">
-      <DependentUpon>easymode.cs</DependentUpon>
+    <Compile Include="emu_ppc.Designer.cs">
+      <DependentUpon>emu_ppc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="emu_x86.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="emu_x86.Designer.cs">
+      <DependentUpon>emu_x86.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -60,11 +66,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="help.cs">
+    <Compile Include="emu_arm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="help.Designer.cs">
-      <DependentUpon>help.cs</DependentUpon>
+    <Compile Include="emu_arm.Designer.cs">
+      <DependentUpon>emu_arm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,20 +79,23 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
-    <Compile Include="version.cs">
+    <Compile Include="settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="version.Designer.cs">
-      <DependentUpon>version.cs</DependentUpon>
+    <Compile Include="settings.Designer.cs">
+      <DependentUpon>settings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="easymode.resx">
-      <DependentUpon>easymode.cs</DependentUpon>
+    <EmbeddedResource Include="emu_ppc.resx">
+      <DependentUpon>emu_ppc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emu_x86.resx">
+      <DependentUpon>emu_x86.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="help.resx">
-      <DependentUpon>help.cs</DependentUpon>
+    <EmbeddedResource Include="emu_arm.resx">
+      <DependentUpon>emu_arm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,8 +107,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="version.resx">
-      <DependentUpon>version.cs</DependentUpon>
+    <EmbeddedResource Include="settings.resx">
+      <DependentUpon>settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

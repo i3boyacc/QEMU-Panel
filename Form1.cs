@@ -11,267 +11,202 @@ namespace QEMU_Panel
 {
     public partial class Form1 : Form
     {
+        public static Form1 fm1 = null;
         public Form1()
         {
+            fm1 = this;
             InitializeComponent();
         }
 
-        public int num = 0, selected = 0;
-        public easymode em;
-        public version ver;
-        public help hlp;
+        public int selected = 0;//默认第一个按钮被选中
+        public emu_x86 x86;
+        public settings set;
+        public emu_arm arm;
+        public emu_ppc ppc;
         
+
         public void Form1_Load(object sender, EventArgs e)
         {
-            em = new easymode();
-            ver = new version();
-            hlp = new help();
-            em.Show();
-            ver.Show();
-            hlp.Show();
+            x86 = new emu_x86();
+            set = new settings();
+            arm = new emu_arm();
+            ppc = new emu_ppc();
             
-            panel3.Controls.Add(em);
-            panel3.Controls.Add(ver);
-            panel3.Controls.Add(hlp);
+            x86.Show();
+            set.Show();
+            arm.Show();
+            ppc.Show();
+            panel3.Controls.Add(x86);
+            panel3.Controls.Add(set);
+            panel3.Controls.Add(arm);
+            panel3.Controls.Add(ppc);//向panel里面添加运行QEMU及设置的控件
 
-            ver.Visible = false;
-            hlp.Visible = false;
-            panel3.AutoScrollMinSize = new Size(10, em.Height);
-         
-            if(Settings1.Default.isblack==0)//设置默认颜色，白色或黑色
+            set.Visible = false;
+            arm.Visible = false;
+            ppc.Visible = false;
+            //由于默认选中了QEMU x86，因此默认隐藏其它三个控件
+
+            panel3.AutoScrollMinSize = new Size(10, x86.Height);
+
+            if (Settings1.Default.isblack == 0)//设置默认颜色，白色或黑色
             {
-                color_white.Checked = true;
                 this.BackColor = Color.White;
                 panel1.ForeColor = Color.Black;
                 panel1.BackColor = SystemColors.Menu;
-                em.BackColor = Color.White;
-                em.ForeColor = Color.Black;
-                hlp.BackColor = Color.White;
-                hlp.ForeColor = Color.Black;
-                ver.BackColor = Color.White;
-                ver.ForeColor = Color.Black;
-                button3.ForeColor = Color.Black;
-                button4.ForeColor = Color.Black;
+                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.White;
+                x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.Black;
+                btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.Black;
+                btn_arm.BackColor = btn_set.BackColor = btn_x86.BackColor = btn_ppc.BackColor = panel1.BackColor;
             }
             else
             {
-                color_black.Checked = true;
                 this.BackColor = Color.FromArgb(255, 24, 24, 24);
                 panel1.ForeColor = Color.FromArgb(255, 233, 233, 233);
                 panel1.BackColor = Color.FromArgb(255, 32, 32, 32);
-                em.BackColor = Color.FromArgb(255, 24, 24, 24);
-                em.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                hlp.BackColor = Color.FromArgb(255, 24, 24, 24);
-                hlp.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                ver.BackColor = Color.FromArgb(255, 24, 24, 24);
-                ver.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                button3.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                button4.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.FromArgb(255, 24, 24, 24);
+                x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                btn_arm.BackColor = btn_set.BackColor = btn_x86.BackColor = btn_ppc.BackColor = panel1.BackColor;
             }
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
         }
 
-        private void change_color(int r,int g,int b)
+        public void change_theme()
+        {
+            if (Settings1.Default.isblack == 0)//设置默认颜色，白色或黑色
+            {
+                this.BackColor = Color.White;
+                panel1.ForeColor = Color.Black;
+                panel1.BackColor = SystemColors.Menu;
+                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.White;
+                x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.Black;
+                btn_x86.ForeColor = btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.Black;
+                btn_arm.BackColor = btn_set.BackColor = btn_x86.BackColor = btn_ppc.BackColor = panel1.BackColor;
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(255, 24, 24, 24);
+                panel1.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                panel1.BackColor = Color.FromArgb(255, 32, 32, 32);
+                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.FromArgb(255, 24, 24, 24);
+                x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                btn_x86.ForeColor = btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                btn_arm.BackColor = btn_set.BackColor = btn_x86.BackColor = btn_ppc.BackColor = panel1.BackColor;
+            }
+        }
+
+        public void change_color(int r, int g, int b)
         {
             Settings1.Default.color_r = r;
             Settings1.Default.color_g = g;
             Settings1.Default.color_b = b;
-            if (selected == 0) button2.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-            else if (selected == 1) button3.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-            else if (selected == 2) button4.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-            panel2.BackColor = panel_bt.BackColor  = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            if (selected == 0) btn_x86.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            else if (selected == 1) btn_arm.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            else if (selected == 2) btn_ppc.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            else if (selected == 3) btn_set.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            panel2.BackColor = panel_bt.BackColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
             Settings1.Default.Save();
         }
+        
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btn_x86_Click(object sender, EventArgs e)
         {
-            num++;
+            x86.Visible = true;
+            set.Visible = false;
+            arm.Visible = false;
+            ppc.Visible = false;//切换panel中的控件
+            if (Settings1.Default.isblack == 0)
+            {
+                btn_set.ForeColor
+                = btn_arm.ForeColor
+                = btn_ppc.ForeColor
+                = Color.Black;
+            }
+            else
+            {
+                btn_set.ForeColor
+                = btn_arm.ForeColor
+                = btn_ppc.ForeColor
+                = Color.FromArgb(255, 233, 233, 233);
+            }//根据当前颜色主题设置未选中控件对应按钮的文字颜色
+            selected = 0;//用数字表示目前选中的控件对应的按钮，以便后续使用
+            panel_bt.Location = btn_x86.Location;
+            panel3.AutoScrollMinSize = new Size(10, x86.Height);//设置滚动条滚动长度
+            change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_arm_Click(object sender, EventArgs e)
         {
-            ver.Visible = true;
-            em.Visible = false;
-            hlp.Visible = false;
+            arm.Visible = true;
+            set.Visible = false;
+            x86.Visible = false;
+            ppc.Visible = false;
             if (Settings1.Default.isblack == 0)
             {
-                button2.ForeColor = Color.Black;
-                button3.ForeColor = Color.Black;
+                btn_set.ForeColor
+                = btn_ppc.ForeColor
+                = btn_x86.ForeColor
+                = Color.Black;
             }
             else
             {
-                button2.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                button3.ForeColor = Color.FromArgb(255, 233, 233, 233);
-            }
-            selected = 2;
-            int ver_h = ver.Height;
-            panel3.AutoScrollMinSize = new Size(10, ver_h);
-            panel_bt.Location = button4.Location;
-            
-            change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-        }//切换控件，设置控件可见性，设置按钮颜色
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            hlp.Visible = true;
-            ver.Visible = false;
-            em.Visible = false;
-            if (Settings1.Default.isblack == 0)
-            {
-                button4.ForeColor = Color.Black;
-                button2.ForeColor = Color.Black;
-            }
-            else
-            {
-                button4.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                button2.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                btn_set.ForeColor
+                = btn_x86.ForeColor
+                = btn_ppc.ForeColor
+                = Color.FromArgb(255, 233, 233, 233);
             }
             selected = 1;
-            panel_bt.Location = button3.Location;
-            panel3.AutoScrollMinSize = new Size(10, hlp.Height);
+            panel_bt.Location = btn_arm.Location;
+            panel3.AutoScrollMinSize = new Size(10, arm.Height);
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_ppc_Click(object sender, EventArgs e)
         {
-            em.Visible = true;
-            ver.Visible = false;
-            hlp.Visible = false;
+            ppc.Visible = true;
+            arm.Visible = false;
+            set.Visible = false;
+            x86.Visible = false;
             if (Settings1.Default.isblack == 0)
             {
-                button4.ForeColor = Color.Black;
-                button3.ForeColor = Color.Black;
+                btn_set.ForeColor = btn_x86.ForeColor = btn_arm.ForeColor = Color.Black;
             }
             else
             {
-                button4.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                button3.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                btn_set.ForeColor = btn_x86.ForeColor = btn_arm.ForeColor
+                    = Color.FromArgb(255, 233, 233, 233);
             }
-            selected = 0;
-            panel_bt.Location = button2.Location;
+            selected = 2;
+            panel_bt.Location = btn_ppc.Location;
+            panel3.AutoScrollMinSize = new Size(10, ppc.Height);
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_set_Click(object sender, EventArgs e)
         {
-            change_color(12,81,184);
-        }//更使用指定的RGB值更改颜色，下同
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            change_color(128,0,0);
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            change_color(46,139,87);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            change_color(0,139,139);
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            change_color(33,150,243);
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            change_color(72,61,139);
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            change_color(251,114,153);
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            change_color(128,128,128);
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            change_color(192,64,0);
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            change_color(255,215,0);
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            change_color(121,68,36);
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            change_color(167,212,192);
-        }
-        
-        private void button16_Click(object sender, EventArgs e)
-        {
-            change_color(192,192,255);
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            change_color(255,192,128);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (colorset.Visible == false)
+            set.Visible = true;
+            x86.Visible = false;
+            arm.Visible = false;
+            ppc.Visible = false;
+            if (Settings1.Default.isblack == 0)
             {
-                colorset.Visible = true;
-                button5.Text = "  隐藏颜色设置";
-            }
-            else if (colorset.Visible == true)
-            {
-                colorset.Visible = false;
-                button5.Text = "  显示颜色设置";
-            }
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        { 
-            if(color_white.Checked)
-            {
-                this.BackColor = Color.White;
-                panel1.ForeColor = Color.Black;
-                panel1.BackColor = button2.BackColor = button3.BackColor = button4.BackColor = button5.BackColor = SystemColors.Menu;
-                em.BackColor = Color.White;
-                em.ForeColor = Color.Black;
-                hlp.BackColor = Color.White;
-                hlp.ForeColor = Color.Black;
-                ver.BackColor = Color.White;
-                ver.ForeColor = Color.Black;
-                Settings1.Default.isblack = 0;
-                Settings1.Default.Save();
-                if (button2.ForeColor == Color.FromArgb(255, 233, 233, 233)) button2.ForeColor = Color.Black;
-                if (button3.ForeColor == Color.FromArgb(255, 233, 233, 233)) button3.ForeColor = Color.Black;
-                if (button4.ForeColor == Color.FromArgb(255, 233, 233, 233)) button4.ForeColor = Color.Black;
+                btn_x86.ForeColor
+                = btn_arm.ForeColor
+                = btn_ppc.ForeColor
+                = Color.Black;
             }
             else
             {
-                this.BackColor = Color.FromArgb(255, 24, 24, 24);
-                panel1.ForeColor = Color.FromArgb(255,233,233,233);
-                panel1.BackColor = button2.BackColor =button3.BackColor = button4.BackColor = button5.BackColor = Color.FromArgb(255, 32, 32, 32);
-                em.BackColor = Color.FromArgb(255, 24, 24, 24);
-                em.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                hlp.BackColor = Color.FromArgb(255, 24, 24, 24);
-                hlp.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                ver.BackColor = Color.FromArgb(255, 24, 24, 24);
-                ver.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                Settings1.Default.isblack = 1;
-                Settings1.Default.Save();
-                if (button2.ForeColor == Color.Black) button2.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                if (button3.ForeColor == Color.Black) button3.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                if (button4.ForeColor == Color.Black) button4.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                btn_x86.ForeColor
+                = btn_arm.ForeColor 
+                = btn_ppc.ForeColor
+                = Color.FromArgb(255, 233, 233, 233);
             }
-        }
-    }  
+            selected = 3;
+            panel3.AutoScrollMinSize = new Size(10, set.Height);
+            panel_bt.Location = btn_set.Location;
+
+            change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+        }//切换控件，设置控件可见性，设置按钮颜色
+    }
 }

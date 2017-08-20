@@ -8,9 +8,9 @@ using System.Diagnostics;
 
 namespace QEMU_Panel
 {
-    public partial class easymode : UserControl
+    public partial class emu_x86 : UserControl
     {
-        public easymode()
+        public emu_x86()
         {
             InitializeComponent();
         }
