@@ -99,9 +99,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(12, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(252, 54);
+            this.label6.Size = new System.Drawing.Size(319, 54);
             this.label6.TabIndex = 0;
-            this.label6.Text = "欢迎使用QEMU Panel！\r\n要开始，请选择一项任务：";
+            this.label6.Text = "欢迎使用QEMU Panel Pre-Beta！\r\n要开始，请选择一项任务：";
             // 
             // btn_set
             // 
@@ -181,7 +181,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1061, 363);
             this.Name = "Form1";
-            this.Text = "QEMU Panel";
+            this.Text = "QEMU Panel Pre-Beta";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
