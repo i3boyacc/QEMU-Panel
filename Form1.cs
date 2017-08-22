@@ -14,7 +14,7 @@ namespace QEMU_Panel
         public static Form1 fm1 = null;
         public Form1()
         {
-            fm1 = this;
+            fm1 = this;//便于其它控件调用该窗口中的函数
             InitializeComponent();
         }
 

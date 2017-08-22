@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
 
 namespace QEMU_Panel
 {
@@ -28,7 +29,8 @@ namespace QEMU_Panel
             {
                 if ((File.Exists("\"" + hdd_img.Text + "\"") || hdd_img.Text == String.Empty)
                 && (File.Exists("\"" + flp_img.Text + "\"") || flp_img.Text == String.Empty)
-                && File.Exists("\"" + cdr_img.Text + "\"") || cdr_img.Text == String.Empty) ;
+                && File.Exists("\"" + cdr_img.Text + "\"") || cdr_img.Text == String.Empty) Thread.Sleep(1) ;
+                //VS提示空语句可能有错误，我也不知道该写什么了，然而我又不知道文件不存在该怎么写，只能这么写了（对程序速度影响甚微）
                 else MessageBox.Show("警告：我们无法找到您指定的硬盘、软盘或光盘镜像，模拟器可能会无法启动。", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //判断指定的镜像文件是否存在，如不存在则给出警告（我用的这方式不要吐槽）
                 if (cpu_corenum.Text == String.Empty) { cpuarg = String.Empty; }
