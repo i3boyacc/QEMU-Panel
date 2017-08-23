@@ -75,7 +75,7 @@ namespace QEMU_Panel
 
         private void color10_Click(object sender, System.EventArgs e)
         {
-            change_color(121, 268, 36);
+            change_color(121, 68, 36);
         }
 
         private void color11_Click(object sender, System.EventArgs e)
