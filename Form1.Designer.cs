@@ -34,8 +34,11 @@
             this.btn_arm = new System.Windows.Forms.Button();
             this.btn_x86 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,6 +66,7 @@
             this.panel_bt.Name = "panel_bt";
             this.panel_bt.Size = new System.Drawing.Size(7, 50);
             this.panel_bt.TabIndex = 0;
+            this.panel_bt.Visible = false;
             // 
             // btn_ppc
             // 
@@ -144,7 +148,7 @@
             this.btn_x86.FlatAppearance.BorderSize = 0;
             this.btn_x86.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_x86.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_x86.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(81)))), ((int)(((byte)(184)))));
+            this.btn_x86.ForeColor = System.Drawing.Color.Black;
             this.btn_x86.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_x86.Location = new System.Drawing.Point(0, 88);
             this.btn_x86.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -162,12 +166,40 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(315, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.MinimumSize = new System.Drawing.Size(707, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(731, 705);
             this.panel3.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.label2.Location = new System.Drawing.Point(180, 332);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(373, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "若要开始，请从左侧菜单栏选择一项任务。";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(205, 296);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(302, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "欢迎使用QEMU Panel!";
             // 
             // Form1
             // 
@@ -186,6 +218,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -201,6 +235,8 @@
         private System.Windows.Forms.Panel panel_bt;
         private System.Windows.Forms.Button btn_arm;
         private System.Windows.Forms.Button btn_ppc;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

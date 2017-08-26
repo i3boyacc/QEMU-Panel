@@ -18,7 +18,7 @@ namespace QEMU_Panel
             InitializeComponent();
         }
 
-        public int selected = 0;//默认第一个按钮被选中
+        public int selected;//用值表示选中的按钮
         public emu_x86 x86;
         public settings set;
         public emu_arm arm;
@@ -41,12 +41,11 @@ namespace QEMU_Panel
             panel3.Controls.Add(arm);
             panel3.Controls.Add(ppc);//向panel里面添加运行QEMU及设置的控件
 
+            x86.Visible = false;
             set.Visible = false;
             arm.Visible = false;
             ppc.Visible = false;
             //由于默认选中了QEMU x86，因此默认隐藏其它三个控件
-
-            panel3.AutoScrollMinSize = new Size(10, x86.Height);
 
             if (Settings1.Default.isblack == 0)//设置默认颜色，白色或黑色
             {
@@ -55,7 +54,7 @@ namespace QEMU_Panel
                 panel1.BackColor = SystemColors.Menu;
                 x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.White;
                 x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.Black;
-                btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.Black;
+                btn_x86.ForeColor = btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.Black;
                 btn_arm.BackColor = btn_set.BackColor = btn_x86.BackColor = btn_ppc.BackColor = panel1.BackColor;
             }
             else
@@ -65,7 +64,7 @@ namespace QEMU_Panel
                 panel1.BackColor = Color.FromArgb(255, 32, 32, 32);
                 x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.FromArgb(255, 24, 24, 24);
                 x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                btn_x86.ForeColor = btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.FromArgb(255, 233, 233, 233);
                 btn_arm.BackColor = btn_set.BackColor = btn_x86.BackColor = btn_ppc.BackColor = panel1.BackColor;
             }
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
@@ -115,6 +114,8 @@ namespace QEMU_Panel
             set.Visible = false;
             arm.Visible = false;
             ppc.Visible = false;//切换panel中的控件
+            label1.Visible = label2.Visible = false;
+            panel_bt.Visible = true;
             if (Settings1.Default.isblack == 0)
             {
                 btn_set.ForeColor
@@ -141,6 +142,8 @@ namespace QEMU_Panel
             set.Visible = false;
             x86.Visible = false;
             ppc.Visible = false;
+            label1.Visible = label2.Visible = false;
+            panel_bt.Visible = true;
             if (Settings1.Default.isblack == 0)
             {
                 btn_set.ForeColor
@@ -167,6 +170,8 @@ namespace QEMU_Panel
             arm.Visible = false;
             set.Visible = false;
             x86.Visible = false;
+            label1.Visible = label2.Visible = false;
+            panel_bt.Visible = true;
             if (Settings1.Default.isblack == 0)
             {
                 btn_set.ForeColor = btn_x86.ForeColor = btn_arm.ForeColor = Color.Black;
@@ -188,6 +193,7 @@ namespace QEMU_Panel
             x86.Visible = false;
             arm.Visible = false;
             ppc.Visible = false;
+            label1.Visible = label2.Visible = false;
             if (Settings1.Default.isblack == 0)
             {
                 btn_x86.ForeColor
@@ -208,5 +214,6 @@ namespace QEMU_Panel
 
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
         }//切换控件，设置控件可见性，设置按钮颜色
+        
     }
 }
