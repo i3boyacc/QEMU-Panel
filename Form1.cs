@@ -103,7 +103,7 @@ namespace QEMU_Panel
             else if (selected == 1) btn_arm.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
             else if (selected == 2) btn_ppc.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
             else if (selected == 3) btn_set.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-            panel2.BackColor = panel_bt.BackColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            panel_bt.BackColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
             Settings1.Default.Save();
         }
         
