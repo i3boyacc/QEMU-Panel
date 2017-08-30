@@ -59,12 +59,12 @@ namespace QEMU_Panel
             }
             else
             {
-                this.BackColor = Color.FromArgb(255, 24, 24, 24);
-                panel1.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                panel1.BackColor = Color.FromArgb(255, 32, 32, 32);
-                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.FromArgb(255, 24, 24, 24);
-                x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                btn_x86.ForeColor = btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                this.BackColor = Color.FromArgb(24, 24, 24);
+                panel1.ForeColor = Color.FromArgb(233, 233, 233);
+                panel1.BackColor = Color.FromArgb(32, 32, 32);
+                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.FromArgb(24, 24, 24);
+                x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.FromArgb(233, 233, 233);
+                btn_x86.ForeColor = btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.FromArgb(233, 233, 233);
                 btn_arm.BackColor = btn_set.BackColor = btn_x86.BackColor = btn_ppc.BackColor = panel1.BackColor;
             }
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
@@ -84,12 +84,12 @@ namespace QEMU_Panel
             }
             else
             {
-                this.BackColor = Color.FromArgb(255, 24, 24, 24);
-                panel1.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                panel1.BackColor = Color.FromArgb(255, 32, 32, 32);
-                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.FromArgb(255, 24, 24, 24);
-                x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.FromArgb(255, 233, 233, 233);
-                btn_x86.ForeColor = btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.FromArgb(255, 233, 233, 233);
+                this.BackColor = Color.FromArgb(24, 24, 24);
+                panel1.ForeColor = Color.FromArgb(233, 233, 233);
+                panel1.BackColor = Color.FromArgb(32, 32, 32);
+                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.FromArgb(24, 24, 24);
+                x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.FromArgb(233, 233, 233);
+                btn_x86.ForeColor = btn_arm.ForeColor = btn_ppc.ForeColor = btn_set.ForeColor = Color.FromArgb(233, 233, 233);
                 btn_arm.BackColor = btn_set.BackColor = btn_x86.BackColor = btn_ppc.BackColor = panel1.BackColor;
             }
         }
@@ -99,11 +99,11 @@ namespace QEMU_Panel
             Settings1.Default.color_r = r;
             Settings1.Default.color_g = g;
             Settings1.Default.color_b = b;
-            if (selected == 0) btn_x86.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-            else if (selected == 1) btn_arm.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-            else if (selected == 2) btn_ppc.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-            else if (selected == 3) btn_set.ForeColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
-            panel_bt.BackColor = Color.FromArgb(255, Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            if (selected == 0) btn_x86.ForeColor = Color.FromArgb(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            else if (selected == 1) btn_arm.ForeColor = Color.FromArgb(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            else if (selected == 2) btn_ppc.ForeColor = Color.FromArgb(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            else if (selected == 3) btn_set.ForeColor = Color.FromArgb(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            panel_bt.BackColor = Color.FromArgb(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
             Settings1.Default.Save();
         }
         
@@ -128,7 +128,7 @@ namespace QEMU_Panel
                 btn_set.ForeColor
                 = btn_arm.ForeColor
                 = btn_ppc.ForeColor
-                = Color.FromArgb(255, 233, 233, 233);
+                = Color.FromArgb(233, 233, 233);
             }//根据当前颜色主题设置未选中控件对应按钮的文字颜色
             selected = 0;//用数字表示目前选中的控件对应的按钮，以便后续使用
             panel_bt.Location = btn_x86.Location;
@@ -156,7 +156,7 @@ namespace QEMU_Panel
                 btn_set.ForeColor
                 = btn_x86.ForeColor
                 = btn_ppc.ForeColor
-                = Color.FromArgb(255, 233, 233, 233);
+                = Color.FromArgb(233, 233, 233);
             }
             selected = 1;
             panel_bt.Location = btn_arm.Location;
@@ -179,7 +179,7 @@ namespace QEMU_Panel
             else
             {
                 btn_set.ForeColor = btn_x86.ForeColor = btn_arm.ForeColor
-                    = Color.FromArgb(255, 233, 233, 233);
+                    = Color.FromArgb(233, 233, 233);
             }
             selected = 2;
             panel_bt.Location = btn_ppc.Location;
@@ -206,7 +206,7 @@ namespace QEMU_Panel
                 btn_x86.ForeColor
                 = btn_arm.ForeColor 
                 = btn_ppc.ForeColor
-                = Color.FromArgb(255, 233, 233, 233);
+                = Color.FromArgb(233, 233, 233);
             }
             selected = 3;
             panel3.AutoScrollMinSize = new Size(10, set.Height);
