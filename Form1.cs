@@ -114,6 +114,7 @@ namespace QEMU_Panel
             set.Visible = false;
             arm.Visible = false;
             ppc.Visible = false;//切换panel中的控件
+            panel4.Visible = false;
             label1.Visible = label2.Visible = false;
             panel_bt.Visible = true;
             if (Settings1.Default.isblack == 0)
@@ -142,6 +143,7 @@ namespace QEMU_Panel
             set.Visible = false;
             x86.Visible = false;
             ppc.Visible = false;
+            panel4.Visible = false;
             label1.Visible = label2.Visible = false;
             panel_bt.Visible = true;
             if (Settings1.Default.isblack == 0)
@@ -170,6 +172,7 @@ namespace QEMU_Panel
             arm.Visible = false;
             set.Visible = false;
             x86.Visible = false;
+            panel4.Visible = false;
             label1.Visible = label2.Visible = false;
             panel_bt.Visible = true;
             if (Settings1.Default.isblack == 0)
@@ -193,6 +196,7 @@ namespace QEMU_Panel
             x86.Visible = false;
             arm.Visible = false;
             ppc.Visible = false;
+            panel4.Visible = false;
             label1.Visible = label2.Visible = false;
             if (Settings1.Default.isblack == 0)
             {
