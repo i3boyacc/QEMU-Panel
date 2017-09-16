@@ -96,6 +96,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.add_arg = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -115,8 +116,8 @@
             this.cpu_mode.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cpu_mode.FormattingEnabled = true;
             this.cpu_mode.Items.AddRange(new object[] {
-            "i386",
-            "x86_64"});
+            "arm32",
+            "arm64"});
             this.cpu_mode.Location = new System.Drawing.Point(107, 277);
             this.cpu_mode.Margin = new System.Windows.Forms.Padding(4);
             this.cpu_mode.Name = "cpu_mode";
@@ -193,36 +194,38 @@
             this.cpu_model.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cpu_model.FormattingEnabled = true;
             this.cpu_model.Items.AddRange(new object[] {
-            "486",
-            "Intel Core Processor (Broadwell, no TSX)",
-            "Intel Core Processor (Broadwell)",
-            "Intel Celeron_4x0 (Conroe/Merom Class Core 2)",
-            "Intel Core Processor (Haswell, no TSX)",
-            "Intel Core Processor (Haswell)",
-            "Intel Xeon E3-12xx v2 (Ivy Bridge)",
-            "Intel Core i7 9xx (Nehalem Class Core i7)",
-            "Intel Core 2 Duo P9xxx (Penryn Class Core 2)",
-            "Intel Xeon E312xx (Sandy Bridge)",
-            "Intel Core Processor (Skylake)",
-            "AMD Opteron 240 (Gen 1 Class Opteron)",
-            "AMD Opteron 22xx (Gen 2 Class Opteron)",
-            "AMD Opteron 23xx (Gen 3 Class Opteron)",
-            "AMD Opteron 62xx class CPU",
-            "AMD Opteron 63xx class CPU",
-            "Westmere E56xx/L56xx/X56xx (Nehalem-C)",
-            "QEMU Virtual CPU version 2.5+",
-            "Intel(R) Core(TM)2 Duo CPU     T7700  @ 2.40GHz",
-            "Genuine Intel(R) CPU           T2600  @ 2.16GHz",
-            "Common 32-bit KVM processor",
-            "Common KVM processor",
-            "Intel(R) Atom(TM) CPU N270   @ 1.60GHz",
-            "Pentium",
-            "Pentium 2",
-            "Pentium 3",
-            "AMD Phenom(tm) 9550 Quad-Core Processor",
-            "QEMU Virtual CPU version 2.5+(x86)",
-            "QEMU Virtual CPU version 2.5+",
-            "base CPU model type with no features enabled"});
+            "arm1026",
+            "arm1136",
+            "arm1136-r2",
+            "arm1176",
+            "arm11mpcore",
+            "arm920t",
+            "arm926",
+            "arm946",
+            "cortex-a15",
+            "cortex-a53",
+            "cortex-a57",
+            "cortex-a7",
+            "cortex-a8",
+            "cortex-a9",
+            "cortex-m3",
+            "cortex-m4",
+            "cortex-r5",
+            "pxa250",
+            "pxa255",
+            "pxa260",
+            "pxa261",
+            "pxa262",
+            "pxa270-a0",
+            "pxa270-a1",
+            "pxa270",
+            "pxa270-b0",
+            "pxa270-b1",
+            "pxa270-c0",
+            "pxa270-c5",
+            "sa1100",
+            "sa1110",
+            "ti925t"});
             this.cpu_model.Location = new System.Drawing.Point(107, 319);
             this.cpu_model.Margin = new System.Windows.Forms.Padding(4);
             this.cpu_model.Name = "cpu_model";
@@ -900,11 +903,22 @@
             this.button6.Text = "确认并启动虚拟机";
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Location = new System.Drawing.Point(31, 358);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(636, 25);
+            this.label28.TabIndex = 85;
+            this.label28.Text = "注意：“cortex-a53“和\"cortex-a57”型号的CPU仅限arm64架构使用。";
+            // 
             // emu_arm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.add_arg);
             this.Controls.Add(this.button6);
@@ -1051,5 +1065,6 @@
         private System.Windows.Forms.Label label27;
         public System.Windows.Forms.TextBox add_arg;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label28;
     }
 }
