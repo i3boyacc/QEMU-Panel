@@ -97,6 +97,9 @@
             this.add_arg = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.usb_img = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -341,7 +344,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label41.Location = new System.Drawing.Point(28, 1224);
+            this.label41.Location = new System.Drawing.Point(34, 1281);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(107, 25);
             this.label41.TabIndex = 66;
@@ -369,7 +372,7 @@
             "pcnet",
             "tnetw1130",
             "virtio"});
-            this.net_mod.Location = new System.Drawing.Point(268, 1220);
+            this.net_mod.Location = new System.Drawing.Point(274, 1277);
             this.net_mod.Margin = new System.Windows.Forms.Padding(4);
             this.net_mod.Name = "net_mod";
             this.net_mod.Size = new System.Drawing.Size(132, 33);
@@ -378,7 +381,7 @@
             // net_host_port
             // 
             this.net_host_port.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.net_host_port.Location = new System.Drawing.Point(268, 1178);
+            this.net_host_port.Location = new System.Drawing.Point(274, 1235);
             this.net_host_port.Margin = new System.Windows.Forms.Padding(4);
             this.net_host_port.Name = "net_host_port";
             this.net_host_port.Size = new System.Drawing.Size(132, 32);
@@ -387,7 +390,7 @@
             // net_vm_port
             // 
             this.net_vm_port.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.net_vm_port.Location = new System.Drawing.Point(268, 1137);
+            this.net_vm_port.Location = new System.Drawing.Point(274, 1194);
             this.net_vm_port.Margin = new System.Windows.Forms.Padding(4);
             this.net_vm_port.Name = "net_vm_port";
             this.net_vm_port.Size = new System.Drawing.Size(132, 32);
@@ -397,7 +400,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label40.Location = new System.Drawing.Point(30, 1182);
+            this.label40.Location = new System.Drawing.Point(36, 1239);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(164, 25);
             this.label40.TabIndex = 65;
@@ -407,7 +410,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label39.Location = new System.Drawing.Point(30, 1140);
+            this.label39.Location = new System.Drawing.Point(36, 1197);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(221, 25);
             this.label39.TabIndex = 64;
@@ -416,7 +419,7 @@
             // vnc_port
             // 
             this.vnc_port.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.vnc_port.Location = new System.Drawing.Point(554, 1346);
+            this.vnc_port.Location = new System.Drawing.Point(555, 1400);
             this.vnc_port.Margin = new System.Windows.Forms.Padding(4);
             this.vnc_port.Name = "vnc_port";
             this.vnc_port.Size = new System.Drawing.Size(97, 32);
@@ -426,7 +429,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label38.Location = new System.Drawing.Point(30, 1324);
+            this.label38.Location = new System.Drawing.Point(33, 1382);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(494, 50);
             this.label38.TabIndex = 63;
@@ -436,7 +439,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label37.Location = new System.Drawing.Point(28, 1262);
+            this.label37.Location = new System.Drawing.Point(35, 1320);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(114, 62);
@@ -457,7 +460,7 @@
             "Sun cgthree framebuffer",
             "Virtio VGA card",
             "(禁用VGA显示卡)"});
-            this.vga_mod.Location = new System.Drawing.Point(110, 978);
+            this.vga_mod.Location = new System.Drawing.Point(115, 1064);
             this.vga_mod.Margin = new System.Windows.Forms.Padding(4);
             this.vga_mod.Name = "vga_mod";
             this.vga_mod.Size = new System.Drawing.Size(541, 32);
@@ -467,7 +470,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("微软雅黑", 11.25F);
-            this.label36.Location = new System.Drawing.Point(30, 958);
+            this.label36.Location = new System.Drawing.Point(35, 1044);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(69, 50);
@@ -478,7 +481,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label35.Location = new System.Drawing.Point(28, 896);
+            this.label35.Location = new System.Drawing.Point(33, 982);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(62, 62);
@@ -489,7 +492,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label26.Location = new System.Drawing.Point(31, 1733);
+            this.label26.Location = new System.Drawing.Point(30, 1801);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(601, 100);
             this.label26.TabIndex = 43;
@@ -500,7 +503,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label25.Location = new System.Drawing.Point(29, 1642);
+            this.label25.Location = new System.Drawing.Point(29, 1710);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(189, 50);
             this.label25.TabIndex = 42;
@@ -510,7 +513,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label22.Location = new System.Drawing.Point(628, 1699);
+            this.label22.Location = new System.Drawing.Point(628, 1767);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(31, 25);
             this.label22.TabIndex = 41;
@@ -519,7 +522,7 @@
             // time_sec
             // 
             this.time_sec.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_sec.Location = new System.Drawing.Point(561, 1695);
+            this.time_sec.Location = new System.Drawing.Point(561, 1763);
             this.time_sec.Margin = new System.Windows.Forms.Padding(4);
             this.time_sec.Name = "time_sec";
             this.time_sec.Size = new System.Drawing.Size(59, 32);
@@ -529,7 +532,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label23.Location = new System.Drawing.Point(523, 1699);
+            this.label23.Location = new System.Drawing.Point(523, 1767);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(31, 25);
             this.label23.TabIndex = 39;
@@ -538,7 +541,7 @@
             // time_min
             // 
             this.time_min.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_min.Location = new System.Drawing.Point(456, 1695);
+            this.time_min.Location = new System.Drawing.Point(456, 1763);
             this.time_min.Margin = new System.Windows.Forms.Padding(4);
             this.time_min.Name = "time_min";
             this.time_min.Size = new System.Drawing.Size(59, 32);
@@ -548,7 +551,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label24.Location = new System.Drawing.Point(417, 1699);
+            this.label24.Location = new System.Drawing.Point(417, 1767);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(31, 25);
             this.label24.TabIndex = 38;
@@ -557,7 +560,7 @@
             // time_hour
             // 
             this.time_hour.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_hour.Location = new System.Drawing.Point(351, 1695);
+            this.time_hour.Location = new System.Drawing.Point(351, 1763);
             this.time_hour.Margin = new System.Windows.Forms.Padding(4);
             this.time_hour.Name = "time_hour";
             this.time_hour.Size = new System.Drawing.Size(59, 32);
@@ -567,7 +570,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label21.Location = new System.Drawing.Point(312, 1699);
+            this.label21.Location = new System.Drawing.Point(312, 1767);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(31, 25);
             this.label21.TabIndex = 37;
@@ -576,7 +579,7 @@
             // time_d
             // 
             this.time_d.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_d.Location = new System.Drawing.Point(245, 1695);
+            this.time_d.Location = new System.Drawing.Point(245, 1763);
             this.time_d.Margin = new System.Windows.Forms.Padding(4);
             this.time_d.Name = "time_d";
             this.time_d.Size = new System.Drawing.Size(59, 32);
@@ -586,7 +589,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label20.Location = new System.Drawing.Point(207, 1699);
+            this.label20.Location = new System.Drawing.Point(207, 1767);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(31, 25);
             this.label20.TabIndex = 36;
@@ -595,7 +598,7 @@
             // time_m
             // 
             this.time_m.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_m.Location = new System.Drawing.Point(140, 1695);
+            this.time_m.Location = new System.Drawing.Point(140, 1763);
             this.time_m.Margin = new System.Windows.Forms.Padding(4);
             this.time_m.Name = "time_m";
             this.time_m.Size = new System.Drawing.Size(59, 32);
@@ -605,7 +608,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label15.Location = new System.Drawing.Point(101, 1699);
+            this.label15.Location = new System.Drawing.Point(101, 1767);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(31, 25);
             this.label15.TabIndex = 47;
@@ -614,7 +617,7 @@
             // time_y
             // 
             this.time_y.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_y.Location = new System.Drawing.Point(35, 1695);
+            this.time_y.Location = new System.Drawing.Point(35, 1763);
             this.time_y.Margin = new System.Windows.Forms.Padding(4);
             this.time_y.Name = "time_y";
             this.time_y.Size = new System.Drawing.Size(59, 32);
@@ -624,7 +627,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label19.Location = new System.Drawing.Point(30, 834);
+            this.label19.Location = new System.Drawing.Point(35, 920);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(69, 50);
             this.label19.TabIndex = 46;
@@ -636,16 +639,11 @@
             this.aud_mod.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.aud_mod.FormattingEnabled = true;
             this.aud_mod.Items.AddRange(new object[] {
-            "PC speaker",
             "Intel HD Audio",
-            "CS4231A",
-            "Gravis Ultrasound GF1",
-            "Yamaha YM3812 (OPL2)",
             "Intel 82801AA AC97 Audio",
             "ENSONIQ AudioPCI ES1370",
-            "Creative Sound Blaster 16",
             "全部"});
-            this.aud_mod.Location = new System.Drawing.Point(108, 854);
+            this.aud_mod.Location = new System.Drawing.Point(113, 940);
             this.aud_mod.Margin = new System.Windows.Forms.Padding(4);
             this.aud_mod.Name = "aud_mod";
             this.aud_mod.Size = new System.Drawing.Size(543, 32);
@@ -655,7 +653,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label14.Location = new System.Drawing.Point(28, 1579);
+            this.label14.Location = new System.Drawing.Point(32, 1648);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(110, 62);
             this.label14.TabIndex = 44;
@@ -665,7 +663,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label13.Location = new System.Drawing.Point(30, 1083);
+            this.label13.Location = new System.Drawing.Point(36, 1140);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(589, 50);
             this.label13.TabIndex = 45;
@@ -675,7 +673,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label12.Location = new System.Drawing.Point(28, 1020);
+            this.label12.Location = new System.Drawing.Point(34, 1077);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 62);
             this.label12.TabIndex = 40;
@@ -685,7 +683,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label9.Location = new System.Drawing.Point(28, 772);
+            this.label9.Location = new System.Drawing.Point(30, 845);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 62);
             this.label9.TabIndex = 35;
@@ -695,7 +693,7 @@
             // 
             this.usb_dev.AutoSize = true;
             this.usb_dev.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.usb_dev.Location = new System.Drawing.Point(35, 2109);
+            this.usb_dev.Location = new System.Drawing.Point(34, 2177);
             this.usb_dev.Margin = new System.Windows.Forms.Padding(4);
             this.usb_dev.Name = "usb_dev";
             this.usb_dev.Size = new System.Drawing.Size(596, 54);
@@ -711,7 +709,7 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button5.Location = new System.Drawing.Point(568, 1979);
+            this.button5.Location = new System.Drawing.Point(567, 2047);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(97, 34);
@@ -722,7 +720,7 @@
             // bios_file
             // 
             this.bios_file.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.bios_file.Location = new System.Drawing.Point(40, 1979);
+            this.bios_file.Location = new System.Drawing.Point(39, 2047);
             this.bios_file.Margin = new System.Windows.Forms.Padding(4);
             this.bios_file.Name = "bios_file";
             this.bios_file.Size = new System.Drawing.Size(519, 32);
@@ -732,7 +730,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label10.Location = new System.Drawing.Point(36, 1951);
+            this.label10.Location = new System.Drawing.Point(35, 2019);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(341, 25);
             this.label10.TabIndex = 74;
@@ -742,7 +740,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label32.Location = new System.Drawing.Point(36, 1875);
+            this.label32.Location = new System.Drawing.Point(35, 1943);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(582, 75);
             this.label32.TabIndex = 67;
@@ -758,7 +756,7 @@
             "第一软盘驱动器",
             "第一硬盘驱动器",
             "光盘驱动器"});
-            this.boot_sel.Location = new System.Drawing.Point(234, 1837);
+            this.boot_sel.Location = new System.Drawing.Point(233, 1905);
             this.boot_sel.Margin = new System.Windows.Forms.Padding(4);
             this.boot_sel.Name = "boot_sel";
             this.boot_sel.Size = new System.Drawing.Size(371, 32);
@@ -768,7 +766,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label31.Location = new System.Drawing.Point(36, 1841);
+            this.label31.Location = new System.Drawing.Point(35, 1909);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(183, 25);
             this.label31.TabIndex = 68;
@@ -778,7 +776,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label30.Location = new System.Drawing.Point(32, 2015);
+            this.label30.Location = new System.Drawing.Point(31, 2083);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(110, 62);
             this.label30.TabIndex = 69;
@@ -788,7 +786,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label2.Location = new System.Drawing.Point(29, 1374);
+            this.label2.Location = new System.Drawing.Point(35, 1432);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 62);
             this.label2.TabIndex = 75;
@@ -798,7 +796,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label11.Location = new System.Drawing.Point(30, 1436);
+            this.label11.Location = new System.Drawing.Point(31, 1494);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(107, 50);
             this.label11.TabIndex = 76;
@@ -808,7 +806,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label17.Location = new System.Drawing.Point(30, 1522);
+            this.label17.Location = new System.Drawing.Point(34, 1580);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(117, 25);
             this.label17.TabIndex = 77;
@@ -821,7 +819,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button1.Location = new System.Drawing.Point(551, 1486);
+            this.button1.Location = new System.Drawing.Point(552, 1544);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 34);
@@ -834,7 +832,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.textBox1.Location = new System.Drawing.Point(35, 1488);
+            this.textBox1.Location = new System.Drawing.Point(36, 1546);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(511, 32);
@@ -847,7 +845,7 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button4.Location = new System.Drawing.Point(551, 1543);
+            this.button4.Location = new System.Drawing.Point(555, 1601);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 34);
@@ -860,7 +858,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.textBox2.Location = new System.Drawing.Point(35, 1545);
+            this.textBox2.Location = new System.Drawing.Point(39, 1603);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(511, 32);
@@ -870,7 +868,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label27.Location = new System.Drawing.Point(29, 2168);
+            this.label27.Location = new System.Drawing.Point(28, 2236);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(164, 25);
@@ -882,7 +880,7 @@
             this.add_arg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.add_arg.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.add_arg.Location = new System.Drawing.Point(35, 2195);
+            this.add_arg.Location = new System.Drawing.Point(34, 2263);
             this.add_arg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add_arg.Name = "add_arg";
             this.add_arg.Size = new System.Drawing.Size(624, 32);
@@ -895,13 +893,14 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button6.Location = new System.Drawing.Point(464, 2274);
+            this.button6.Location = new System.Drawing.Point(464, 2365);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(196, 48);
             this.button6.TabIndex = 83;
             this.button6.Text = "确认并启动虚拟机";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label28
             // 
@@ -913,11 +912,51 @@
             this.label28.TabIndex = 85;
             this.label28.Text = "注意：“cortex-a53“和\"cortex-a57”型号的CPU仅限arm64架构使用。";
             // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.BackColor = System.Drawing.Color.Silver;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.button7.Location = new System.Drawing.Point(548, 800);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(100, 34);
+            this.button7.TabIndex = 88;
+            this.button7.Text = "浏览";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.label29.Location = new System.Drawing.Point(26, 772);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(182, 25);
+            this.label29.TabIndex = 86;
+            this.label29.Text = "USB储存镜像位置：";
+            // 
+            // usb_img
+            // 
+            this.usb_img.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.usb_img.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.usb_img.Location = new System.Drawing.Point(30, 800);
+            this.usb_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.usb_img.Name = "usb_img";
+            this.usb_img.Size = new System.Drawing.Size(511, 32);
+            this.usb_img.TabIndex = 87;
+            // 
             // emu_arm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.usb_img);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.add_arg);
@@ -989,7 +1028,8 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "emu_arm";
-            this.Size = new System.Drawing.Size(693, 2381);
+            this.Size = new System.Drawing.Size(693, 2481);
+            this.Load += new System.EventHandler(this.emu_arm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1066,5 +1106,8 @@
         public System.Windows.Forms.TextBox add_arg;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox usb_img;
     }
 }
