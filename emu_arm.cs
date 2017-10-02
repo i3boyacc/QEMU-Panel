@@ -23,17 +23,22 @@ namespace QEMU_Panel
             string  cpumarg, memarg, hdaarg, audioarg, netarg, timearg, cdromarg, kernel,initrd,
                 bootarg, biosarg, vncarg, vgaarg, usb, usbstg, qemufilename;
             //cpumarg--CPU型号参数；memarg--内存大小参数；hdaarg--主硬盘参数；audioarg--声卡参数
-            //flparg--软盘参数；netarg--网卡参数；timearg--模拟器时间参数；cdromarg--光驱参数；bootarg--启动项参数；qemufilename--要启动的QEMU文件名
+            //flparg--软盘参数；netarg--网卡参数；timearg--模拟器时间参数；cdromarg--光驱参数；bootarg--启动项参数；
+            //qemufilename--要启动的QEMU文件名
             //biosarg--第三方BIOS文件设置; vncarg--vnc参数; usb--启用USB及USB键鼠支持的参数; usbstg--usb支持的参数
             int vncport;//vnc端口号
             if (cpu_mode.Text == "i386") qemufilename = "qemu-system-i386.exe";
             else qemufilename = "qemu-system-x86_64.exe";
-            if (File.Exists(qemufilename))//判断指定的QEMU文件名是否存在，如存在则继续设置启动参数，如不存在则给出错误提示并拒绝启动QEMU
+            if (File.Exists(qemufilename))
+                //判断指定的QEMU文件名是否存在，如存在则继续设置启动参数，
+                //如不存在则给出错误提示并拒绝启动QEMU
             {
                 if ((File.Exists("\"" + hdd_img.Text + "\"") || hdd_img.Text == String.Empty)
-                && File.Exists("\"" + cdr_img.Text + "\"") || cdr_img.Text == String.Empty) System.Threading.Thread.Sleep(1);
+                && File.Exists("\"" + cdr_img.Text + "\"") || cdr_img.Text == String.Empty)
+                    System.Threading.Thread.Sleep(1);
                 //VS提示空语句可能有错误，我也不知道该写什么了，然而我又不知道文件不存在该怎么写，只能这么写了（对程序速度影响甚微）
-                else MessageBox.Show("警告：我们无法找到您指定的硬盘、光盘或USB储存的镜像，模拟器可能会无法启动。", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else MessageBox.Show("警告：我们无法找到您指定的硬盘、光盘或USB储存的镜像，模拟器可能会无法启动。", 
+                    "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //判断指定的镜像文件是否存在，如不存在则给出警告（我用的这方式不要吐槽）
 
                 if (cpu_model.Text == String.Empty) { cpumarg = String.Empty; }
@@ -50,7 +55,8 @@ namespace QEMU_Panel
 
                 if (usb_img.Text == String.Empty) { usbstg = String.Empty; }
                 else {
-                    usbstg = " -device usb-storage,drive=usbstick -drive if=none,id=usbstick,file=" + "\"" + usb_img.Text + "\" ";
+                    usbstg = " -device usb-storage,drive=usbstick -drive if=none,id=usbstick,file=" 
+                        + "\"" + usb_img.Text + "\" ";
                     if (usb_dev.Checked) System.Threading.Thread.Sleep(0);
                     else usbstg = " -usb " + usbstg;
                 }
@@ -68,16 +74,28 @@ namespace QEMU_Panel
                 else { cdromarg = " -cdrom " + "\"" + cdr_img.Text + "\" "; }
                 //光驱设置
 
+                if (kernel_file.Text == String.Empty) kernel = String.Empty;
+                else kernel = " -kernel \"" + kernel_file.Text + "\" ";
+                //kernel设置
+
+                if (initrd_file.Text == String.Empty) initrd = String.Empty;
+                else initrd = " -initrd \"" + initrd_file.Text + "\" ";
+                //initrd设置
+
                 if (net_mod.Text == String.Empty) netarg = String.Empty;
                 else
                 {
                     netarg = " -net nic,model=" + net_mod.Text;
-                    if (net_host_port.Text == String.Empty || net_vm_port.Text == String.Empty) netarg = netarg + " -net user ";
-                    else netarg = netarg + " -net user,hostfwd=tcp::" + net_host_port.Text + "-:" + net_vm_port.Text + " ";
+                    if (net_host_port.Text == String.Empty || net_vm_port.Text == String.Empty)
+                        netarg = netarg + " -net user ";
+                    else
+                        netarg = netarg + " -net user,hostfwd=tcp::" 
+                            + net_host_port.Text + "-:" + net_vm_port.Text + " ";
                 }
                 //网卡设置
 
-                if (time_y.Text == String.Empty || time_m.Text == String.Empty || time_d.Text == String.Empty) { timearg = " -rtc base=localtime "; }
+                if (time_y.Text == String.Empty || time_m.Text == String.Empty || time_d.Text == String.Empty)
+                    timearg = " -rtc base=localtime "; 
                 else
                 {
                     if (time_hour.Text == String.Empty || time_min.Text == String.Empty || time_sec.Text == String.Empty)
@@ -127,8 +145,8 @@ namespace QEMU_Panel
                 else usb = "";
                 //USB设备及键鼠支持设置
 
-                string arg = cpumarg + memarg + hdaarg + audioarg + netarg + vncarg +
-                     timearg + cdromarg + bootarg + vgaarg + biosarg + usb + usbstg + add_arg.Text;
+                string arg = cpumarg + memarg + hdaarg + audioarg + netarg + vncarg + timearg +
+                     cdromarg + bootarg + vgaarg + biosarg + usb + usbstg + kernel + initrd + add_arg.Text;
                 //生成启动参数
 
                 Process qemu = new Process();
@@ -146,8 +164,11 @@ namespace QEMU_Panel
             }
             else
             {
-                if (cpu_mode.Text == cpu_mode.Items[0].ToString()) MessageBox.Show("错误：无法启动模拟器，因为无法找到QEMU文件“qemu-system-arm.exe”\n请检查后重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else MessageBox.Show("错误：无法启动模拟器，因为无法找到QEMU文件“qemu-system-aarch64.exe”\n请检查后重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (cpu_mode.Text == cpu_mode.Items[0].ToString())
+                    MessageBox.Show("错误：无法启动模拟器，因为无法找到QEMU文件“qemu-system-arm.exe”\n请检查后重试。", "错误"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("错误：无法启动模拟器，因为无法找到QEMU文件“qemu-system-aarch64.exe”\n请检查后重试。"
+                    , "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -155,6 +176,56 @@ namespace QEMU_Panel
         {
             cpu_mode.Text = cpu_mode.Items[0].ToString();//默认选择第一个值
             boot_sel.Text = boot_sel.Items[0].ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open_hda = new OpenFileDialog();
+            open_hda.Filter = "镜像文件|*.img;*.vmdk;*.vhd|所有文件|*.*";
+            if (open_hda.ShowDialog() == DialogResult.OK)
+            {
+                hdd_img.Text = open_hda.FileName;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open_cdr = new OpenFileDialog();
+            open_cdr.Filter = "镜像文件|*.iso;*.cdr|所有文件|*.*";
+            if (open_cdr.ShowDialog() == DialogResult.OK)
+            {
+                cdr_img.Text = open_cdr.FileName;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open_hda = new OpenFileDialog();
+            open_hda.Filter = "镜像文件|*.img;*.vmdk;*.vhd|所有文件|*.*";
+            if (open_hda.ShowDialog() == DialogResult.OK)
+            {
+                usb_img.Text = open_hda.FileName;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open_hda = new OpenFileDialog();
+            open_hda.Filter = "内核文件|*.*";
+            if (open_hda.ShowDialog() == DialogResult.OK)
+            {
+                kernel_file.Text = open_hda.FileName;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open_hda = new OpenFileDialog();
+            open_hda.Filter = "initrd文件|*.*";
+            if (open_hda.ShowDialog() == DialogResult.OK)
+            {
+               initrd_file.Text = open_hda.FileName;
+            }
         }
     }
 }

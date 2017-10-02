@@ -114,7 +114,6 @@ namespace QEMU_Panel
             set.Visible = false;
             arm.Visible = false;
             ppc.Visible = false;//切换panel中的控件
-            panel_bt.Visible = true;
             if (Settings1.Default.isblack == 0)
             {
                 btn_set.ForeColor

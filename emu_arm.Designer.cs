@@ -90,9 +90,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.kernel_file = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.initrd_file = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.add_arg = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -173,6 +173,7 @@
             this.button3.TabIndex = 33;
             this.button3.Text = "浏览";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -188,6 +189,7 @@
             this.button2.TabIndex = 31;
             this.button2.Text = "浏览";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // cpu_model
             // 
@@ -826,17 +828,18 @@
             this.button1.TabIndex = 79;
             this.button1.Text = "浏览";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // kernel_file
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.kernel_file.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.textBox1.Location = new System.Drawing.Point(36, 1546);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(511, 32);
-            this.textBox1.TabIndex = 78;
+            this.kernel_file.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.kernel_file.Location = new System.Drawing.Point(36, 1546);
+            this.kernel_file.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.kernel_file.Name = "kernel_file";
+            this.kernel_file.Size = new System.Drawing.Size(511, 32);
+            this.kernel_file.TabIndex = 78;
             // 
             // button4
             // 
@@ -852,17 +855,18 @@
             this.button4.TabIndex = 81;
             this.button4.Text = "浏览";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox2
+            // initrd_file
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.initrd_file.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.textBox2.Location = new System.Drawing.Point(39, 1603);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(511, 32);
-            this.textBox2.TabIndex = 80;
+            this.initrd_file.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.initrd_file.Location = new System.Drawing.Point(39, 1603);
+            this.initrd_file.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.initrd_file.Name = "initrd_file";
+            this.initrd_file.Size = new System.Drawing.Size(511, 32);
+            this.initrd_file.TabIndex = 80;
             // 
             // label27
             // 
@@ -926,6 +930,7 @@
             this.button7.TabIndex = 88;
             this.button7.Text = "浏览";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label29
             // 
@@ -962,9 +967,9 @@
             this.Controls.Add(this.add_arg);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.initrd_file);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.kernel_file);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label2);
@@ -1099,9 +1104,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox kernel_file;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox initrd_file;
         private System.Windows.Forms.Label label27;
         public System.Windows.Forms.TextBox add_arg;
         private System.Windows.Forms.Button button6;

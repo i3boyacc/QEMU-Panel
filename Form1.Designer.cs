@@ -158,7 +158,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1061, 363);
             this.Name = "Form1";
-            this.Text = "QEMU Panel Pre-Beta";
+            this.Text = "QEMU Panel (Beta)";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

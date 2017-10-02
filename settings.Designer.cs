@@ -74,7 +74,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(472, 275);
             this.label2.TabIndex = 1;
-            this.label2.Text = "\r\nQEMU Panel Beta 1\r\n版本2.0.201\r\nCopyright 2017 追求i3的孩纸(i3boyacc)\r\n\r\n如何提供反馈？\r\n1.如果" +
+            this.label2.Text = "\r\nQEMU Panel Beta 1\r\n版本2.0.214\r\nCopyright 2017 追求i3的孩纸(i3boyacc)\r\n\r\n如何提供反馈？\r\n1.如果" +
     "可以，通过QQ反馈（请勿单独加作者）\r\n2.在Github项目中评论\r\n3.通过邮箱反馈。本人电邮：i3boyacc@outlook.com\r\n\r\n项目地址：";
             // 
             // label3
