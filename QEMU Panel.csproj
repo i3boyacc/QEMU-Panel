@@ -39,24 +39,20 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="emu_ppc.cs">
+    <Compile Include="easymode.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="emu_ppc.Designer.cs">
-      <DependentUpon>emu_ppc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="emu_x86.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="emu_x86.Designer.cs">
-      <DependentUpon>emu_x86.cs</DependentUpon>
+    <Compile Include="easymode.Designer.cs">
+      <DependentUpon>easymode.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -64,11 +60,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="emu_arm.cs">
+    <Compile Include="help.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="emu_arm.Designer.cs">
-      <DependentUpon>emu_arm.cs</DependentUpon>
+    <Compile Include="help.Designer.cs">
+      <DependentUpon>help.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,23 +73,20 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
-    <Compile Include="settings.cs">
+    <Compile Include="version.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="settings.Designer.cs">
-      <DependentUpon>settings.cs</DependentUpon>
+    <Compile Include="version.Designer.cs">
+      <DependentUpon>version.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="emu_ppc.resx">
-      <DependentUpon>emu_ppc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="emu_x86.resx">
-      <DependentUpon>emu_x86.cs</DependentUpon>
+    <EmbeddedResource Include="easymode.resx">
+      <DependentUpon>easymode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="emu_arm.resx">
-      <DependentUpon>emu_arm.cs</DependentUpon>
+    <EmbeddedResource Include="help.resx">
+      <DependentUpon>help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,8 +98,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="settings.resx">
-      <DependentUpon>settings.cs</DependentUpon>
+    <EmbeddedResource Include="version.resx">
+      <DependentUpon>version.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,12 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img1-blue.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
