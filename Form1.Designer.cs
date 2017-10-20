@@ -39,7 +39,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
             this.panel1.Controls.Add(this.panel_bt);
             this.panel1.Controls.Add(this.btn_ppc);
             this.panel1.Controls.Add(this.btn_set);
@@ -48,33 +48,32 @@
             this.panel1.Location = new System.Drawing.Point(0, -8);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 716);
+            this.panel1.Size = new System.Drawing.Size(146, 716);
             this.panel1.TabIndex = 13;
             // 
             // panel_bt
             // 
-            this.panel_bt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
-            this.panel_bt.Location = new System.Drawing.Point(0, 57);
+            this.panel_bt.BackColor = System.Drawing.Color.White;
+            this.panel_bt.Location = new System.Drawing.Point(139, 8);
             this.panel_bt.Margin = new System.Windows.Forms.Padding(4);
             this.panel_bt.Name = "panel_bt";
             this.panel_bt.Size = new System.Drawing.Size(7, 50);
             this.panel_bt.TabIndex = 0;
-            this.panel_bt.Visible = false;
             // 
             // btn_ppc
             // 
-            this.btn_ppc.BackColor = System.Drawing.SystemColors.Menu;
+            this.btn_ppc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
             this.btn_ppc.FlatAppearance.BorderSize = 0;
             this.btn_ppc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ppc.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_ppc.ForeColor = System.Drawing.Color.Black;
+            this.btn_ppc.ForeColor = System.Drawing.Color.White;
             this.btn_ppc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ppc.Location = new System.Drawing.Point(0, 165);
+            this.btn_ppc.Location = new System.Drawing.Point(0, 116);
             this.btn_ppc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_ppc.Name = "btn_ppc";
-            this.btn_ppc.Size = new System.Drawing.Size(328, 50);
+            this.btn_ppc.Size = new System.Drawing.Size(146, 50);
             this.btn_ppc.TabIndex = 4;
-            this.btn_ppc.Text = "  运行QEMU PowerPC";
+            this.btn_ppc.Text = " QEMU PPC";
             this.btn_ppc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ppc.UseVisualStyleBackColor = false;
             this.btn_ppc.Click += new System.EventHandler(this.btn_ppc_Click);
@@ -85,12 +84,12 @@
             this.btn_set.FlatAppearance.BorderSize = 0;
             this.btn_set.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_set.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_set.ForeColor = System.Drawing.Color.Black;
+            this.btn_set.ForeColor = System.Drawing.Color.White;
             this.btn_set.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_set.Location = new System.Drawing.Point(0, 658);
             this.btn_set.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_set.Name = "btn_set";
-            this.btn_set.Size = new System.Drawing.Size(322, 50);
+            this.btn_set.Size = new System.Drawing.Size(146, 50);
             this.btn_set.TabIndex = 3;
             this.btn_set.Text = "  设置";
             this.btn_set.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -99,36 +98,36 @@
             // 
             // btn_arm
             // 
-            this.btn_arm.BackColor = System.Drawing.SystemColors.Menu;
+            this.btn_arm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
             this.btn_arm.FlatAppearance.BorderSize = 0;
             this.btn_arm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_arm.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_arm.ForeColor = System.Drawing.Color.Black;
+            this.btn_arm.ForeColor = System.Drawing.Color.White;
             this.btn_arm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_arm.Location = new System.Drawing.Point(0, 111);
+            this.btn_arm.Location = new System.Drawing.Point(0, 62);
             this.btn_arm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_arm.Name = "btn_arm";
-            this.btn_arm.Size = new System.Drawing.Size(328, 50);
+            this.btn_arm.Size = new System.Drawing.Size(146, 50);
             this.btn_arm.TabIndex = 2;
-            this.btn_arm.Text = "  运行QEMU arm";
+            this.btn_arm.Text = " QEMU arm";
             this.btn_arm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_arm.UseVisualStyleBackColor = false;
             this.btn_arm.Click += new System.EventHandler(this.btn_arm_Click);
             // 
             // btn_x86
             // 
-            this.btn_x86.BackColor = System.Drawing.SystemColors.Menu;
+            this.btn_x86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
             this.btn_x86.FlatAppearance.BorderSize = 0;
             this.btn_x86.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_x86.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_x86.ForeColor = System.Drawing.Color.Black;
+            this.btn_x86.ForeColor = System.Drawing.Color.White;
             this.btn_x86.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_x86.Location = new System.Drawing.Point(0, 57);
+            this.btn_x86.Location = new System.Drawing.Point(0, 8);
             this.btn_x86.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_x86.Name = "btn_x86";
-            this.btn_x86.Size = new System.Drawing.Size(328, 50);
+            this.btn_x86.Size = new System.Drawing.Size(146, 50);
             this.btn_x86.TabIndex = 1;
-            this.btn_x86.Text = "  运行QEMU x86";
+            this.btn_x86.Text = " QEMU x86";
             this.btn_x86.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_x86.UseVisualStyleBackColor = false;
             this.btn_x86.Click += new System.EventHandler(this.btn_x86_Click);
@@ -139,11 +138,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
-            this.panel3.Location = new System.Drawing.Point(315, 0);
+            this.panel3.Location = new System.Drawing.Point(146, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.MinimumSize = new System.Drawing.Size(707, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(731, 705);
+            this.panel3.Size = new System.Drawing.Size(900, 705);
             this.panel3.TabIndex = 6;
             // 
             // Form1
