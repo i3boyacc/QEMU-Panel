@@ -25,22 +25,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_bt = new System.Windows.Forms.Panel();
             this.btn_ppc = new System.Windows.Forms.Button();
             this.btn_set = new System.Windows.Forms.Button();
             this.btn_arm = new System.Windows.Forms.Button();
             this.btn_x86 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.AutoScroll = true;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(146, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.MinimumSize = new System.Drawing.Size(707, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(900, 705);
+            this.panel3.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
-            this.panel1.Controls.Add(this.panel_bt);
+            this.panel1.BackgroundImage = global::QEMU_Panel.Properties.Resources._5;
             this.panel1.Controls.Add(this.btn_ppc);
             this.panel1.Controls.Add(this.btn_set);
             this.panel1.Controls.Add(this.btn_arm);
@@ -51,18 +64,9 @@
             this.panel1.Size = new System.Drawing.Size(146, 716);
             this.panel1.TabIndex = 13;
             // 
-            // panel_bt
-            // 
-            this.panel_bt.BackColor = System.Drawing.Color.White;
-            this.panel_bt.Location = new System.Drawing.Point(139, 8);
-            this.panel_bt.Margin = new System.Windows.Forms.Padding(4);
-            this.panel_bt.Name = "panel_bt";
-            this.panel_bt.Size = new System.Drawing.Size(7, 50);
-            this.panel_bt.TabIndex = 0;
-            // 
             // btn_ppc
             // 
-            this.btn_ppc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
+            this.btn_ppc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_ppc.FlatAppearance.BorderSize = 0;
             this.btn_ppc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ppc.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -81,6 +85,7 @@
             // btn_set
             // 
             this.btn_set.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_set.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_set.FlatAppearance.BorderSize = 0;
             this.btn_set.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_set.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -93,12 +98,12 @@
             this.btn_set.TabIndex = 3;
             this.btn_set.Text = "  设置";
             this.btn_set.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_set.UseVisualStyleBackColor = true;
+            this.btn_set.UseVisualStyleBackColor = false;
             this.btn_set.Click += new System.EventHandler(this.btn_set_Click);
             // 
             // btn_arm
             // 
-            this.btn_arm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
+            this.btn_arm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_arm.FlatAppearance.BorderSize = 0;
             this.btn_arm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_arm.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -116,7 +121,7 @@
             // 
             // btn_x86
             // 
-            this.btn_x86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(70)))), ((int)(((byte)(140)))));
+            this.btn_x86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_x86.FlatAppearance.BorderSize = 0;
             this.btn_x86.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_x86.Font = new System.Drawing.Font("微软雅黑", 12F);
@@ -131,19 +136,6 @@
             this.btn_x86.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_x86.UseVisualStyleBackColor = false;
             this.btn_x86.Click += new System.EventHandler(this.btn_x86_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoScroll = true;
-            this.panel3.Location = new System.Drawing.Point(146, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.MinimumSize = new System.Drawing.Size(707, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(900, 705);
-            this.panel3.TabIndex = 6;
             // 
             // Form1
             // 
@@ -170,7 +162,6 @@
         private System.Windows.Forms.Button btn_x86;
         private System.Windows.Forms.Panel panel3;
         private System.ComponentModel.IContainer components;
-        private System.Windows.Forms.Panel panel_bt;
         private System.Windows.Forms.Button btn_arm;
         private System.Windows.Forms.Button btn_ppc;
     }

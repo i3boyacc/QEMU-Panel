@@ -60,7 +60,7 @@
             this.label1.Location = new System.Drawing.Point(21, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 39);
+            this.label1.Size = new System.Drawing.Size(77, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "设置";
             // 
@@ -72,7 +72,7 @@
             this.label2.Location = new System.Drawing.Point(23, 443);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(400, 275);
+            this.label2.Size = new System.Drawing.Size(396, 286);
             this.label2.TabIndex = 1;
             this.label2.Text = "\r\nQEMU Panel Beta 1\r\n版本2.0.214.1\r\nCopyright 2017 追求i3的孩纸(i3boyacc)\r\n\r\n如何提供反馈？\r\n1." +
     "如果可以，通过QQ反馈（请勿单独加作者）\r\n2.在Github项目中评论\r\n3.通过邮箱反馈(i3boyacc@outlook.com)\r\n\r\n项目地址：";
@@ -83,7 +83,7 @@
             this.label3.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(22, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 62);
+            this.label3.Size = new System.Drawing.Size(111, 64);
             this.label3.TabIndex = 2;
             this.label3.Text = "\r\n颜色设置";
             // 
@@ -93,7 +93,7 @@
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(23, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 50);
+            this.label4.Size = new System.Drawing.Size(126, 52);
             this.label4.TabIndex = 3;
             this.label4.Text = "\r\n选择颜色主题";
             // 
@@ -104,7 +104,7 @@
             this.theme_light.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.theme_light.Location = new System.Drawing.Point(28, 177);
             this.theme_light.Name = "theme_light";
-            this.theme_light.Size = new System.Drawing.Size(71, 29);
+            this.theme_light.Size = new System.Drawing.Size(71, 30);
             this.theme_light.TabIndex = 4;
             this.theme_light.TabStop = true;
             this.theme_light.Text = "浅色";
@@ -116,7 +116,7 @@
             this.theme_dark.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.theme_dark.Location = new System.Drawing.Point(27, 212);
             this.theme_dark.Name = "theme_dark";
-            this.theme_dark.Size = new System.Drawing.Size(71, 29);
+            this.theme_dark.Size = new System.Drawing.Size(71, 30);
             this.theme_dark.TabIndex = 5;
             this.theme_dark.Text = "深色";
             this.theme_dark.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             this.label5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(23, 244);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 25);
+            this.label5.Size = new System.Drawing.Size(126, 26);
             this.label5.TabIndex = 6;
             this.label5.Text = "选择一种配色";
             // 
@@ -306,7 +306,7 @@
             this.label6.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(22, 381);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(226, 62);
+            this.label6.Size = new System.Drawing.Size(213, 64);
             this.label6.TabIndex = 21;
             this.label6.Text = "\r\n关于\"QEMU Panel\"";
             // 
@@ -315,9 +315,9 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.linkLabel1.Location = new System.Drawing.Point(22, 718);
+            this.linkLabel1.Location = new System.Drawing.Point(22, 729);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(399, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(363, 26);
             this.linkLabel1.TabIndex = 22;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://github.com/i3boyacc/QEMU-Panel";
@@ -353,7 +353,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "settings";
-            this.Size = new System.Drawing.Size(693, 772);
+            this.Size = new System.Drawing.Size(693, 812);
             this.Load += new System.EventHandler(this.settings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
