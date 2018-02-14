@@ -60,7 +60,7 @@
             this.label1.Location = new System.Drawing.Point(21, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 40);
+            this.label1.Size = new System.Drawing.Size(77, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "设置";
             // 
@@ -72,10 +72,10 @@
             this.label2.Location = new System.Drawing.Point(23, 443);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(396, 286);
+            this.label2.Size = new System.Drawing.Size(370, 250);
             this.label2.TabIndex = 1;
-            this.label2.Text = "\r\nQEMU Panel Beta 1\r\n版本2.0.214.1\r\nCopyright 2017 追求i3的孩纸(i3boyacc)\r\n\r\n如何提供反馈？\r\n1." +
-    "如果可以，通过QQ反馈（请勿单独加作者）\r\n2.在Github项目中评论\r\n3.通过邮箱反馈(i3boyacc@outlook.com)\r\n\r\n项目地址：";
+            this.label2.Text = "\r\nQEMU Panel Beta 2\r\n版本2.0.220\r\nCopyright 2017 追求i3的孩纸(i3boyacc)\r\n\r\n如何提供反馈？\r\n1.在G" +
+    "ithub项目中评论\r\n2.通过邮箱反馈(i3boyacc@outlook.com)\r\n\r\n项目地址：";
             // 
             // label3
             // 
@@ -83,7 +83,7 @@
             this.label3.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(22, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 64);
+            this.label3.Size = new System.Drawing.Size(110, 62);
             this.label3.TabIndex = 2;
             this.label3.Text = "\r\n颜色设置";
             // 
@@ -93,7 +93,7 @@
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(23, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 52);
+            this.label4.Size = new System.Drawing.Size(126, 50);
             this.label4.TabIndex = 3;
             this.label4.Text = "\r\n选择颜色主题";
             // 
@@ -104,7 +104,7 @@
             this.theme_light.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.theme_light.Location = new System.Drawing.Point(28, 177);
             this.theme_light.Name = "theme_light";
-            this.theme_light.Size = new System.Drawing.Size(71, 30);
+            this.theme_light.Size = new System.Drawing.Size(71, 29);
             this.theme_light.TabIndex = 4;
             this.theme_light.TabStop = true;
             this.theme_light.Text = "浅色";
@@ -116,7 +116,7 @@
             this.theme_dark.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.theme_dark.Location = new System.Drawing.Point(27, 212);
             this.theme_dark.Name = "theme_dark";
-            this.theme_dark.Size = new System.Drawing.Size(71, 30);
+            this.theme_dark.Size = new System.Drawing.Size(71, 29);
             this.theme_dark.TabIndex = 5;
             this.theme_dark.Text = "深色";
             this.theme_dark.UseVisualStyleBackColor = true;
@@ -125,16 +125,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(23, 244);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 26);
+            this.label5.Size = new System.Drawing.Size(240, 25);
             this.label5.TabIndex = 6;
-            this.label5.Text = "选择一种配色";
+            this.label5.Text = "选择一种配色（暂不可用）";
             // 
             // color1
             // 
             this.color1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(81)))), ((int)(((byte)(184)))));
+            this.color1.Enabled = false;
             this.color1.FlatAppearance.BorderSize = 2;
             this.color1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color1.Location = new System.Drawing.Point(28, 273);
@@ -147,6 +149,7 @@
             // color2
             // 
             this.color2.BackColor = System.Drawing.Color.Maroon;
+            this.color2.Enabled = false;
             this.color2.FlatAppearance.BorderSize = 2;
             this.color2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color2.Location = new System.Drawing.Point(84, 272);
@@ -159,6 +162,7 @@
             // color3
             // 
             this.color3.BackColor = System.Drawing.Color.SeaGreen;
+            this.color3.Enabled = false;
             this.color3.FlatAppearance.BorderSize = 2;
             this.color3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color3.Location = new System.Drawing.Point(140, 273);
@@ -171,6 +175,7 @@
             // color4
             // 
             this.color4.BackColor = System.Drawing.Color.DarkCyan;
+            this.color4.Enabled = false;
             this.color4.FlatAppearance.BorderSize = 2;
             this.color4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color4.Location = new System.Drawing.Point(196, 273);
@@ -183,6 +188,7 @@
             // color5
             // 
             this.color5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.color5.Enabled = false;
             this.color5.FlatAppearance.BorderSize = 2;
             this.color5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color5.Location = new System.Drawing.Point(252, 273);
@@ -195,6 +201,7 @@
             // color6
             // 
             this.color6.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.color6.Enabled = false;
             this.color6.FlatAppearance.BorderSize = 2;
             this.color6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color6.Location = new System.Drawing.Point(308, 273);
@@ -207,6 +214,7 @@
             // color7
             // 
             this.color7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(110)))), ((int)(((byte)(183)))));
+            this.color7.Enabled = false;
             this.color7.FlatAppearance.BorderSize = 2;
             this.color7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color7.Location = new System.Drawing.Point(364, 273);
@@ -219,6 +227,7 @@
             // color8
             // 
             this.color8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(84)))), ((int)(((byte)(16)))));
+            this.color8.Enabled = false;
             this.color8.FlatAppearance.BorderSize = 2;
             this.color8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color8.Location = new System.Drawing.Point(420, 273);
@@ -231,6 +240,7 @@
             // color9
             // 
             this.color9.BackColor = System.Drawing.Color.Gold;
+            this.color9.Enabled = false;
             this.color9.FlatAppearance.BorderSize = 2;
             this.color9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color9.Location = new System.Drawing.Point(476, 273);
@@ -243,6 +253,7 @@
             // color10
             // 
             this.color10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(68)))), ((int)(((byte)(36)))));
+            this.color10.Enabled = false;
             this.color10.FlatAppearance.BorderSize = 2;
             this.color10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color10.Location = new System.Drawing.Point(532, 273);
@@ -255,6 +266,7 @@
             // color14
             // 
             this.color14.BackColor = System.Drawing.Color.Gray;
+            this.color14.Enabled = false;
             this.color14.FlatAppearance.BorderSize = 2;
             this.color14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color14.Location = new System.Drawing.Point(196, 329);
@@ -267,6 +279,7 @@
             // color13
             // 
             this.color13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.color13.Enabled = false;
             this.color13.FlatAppearance.BorderSize = 2;
             this.color13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color13.Location = new System.Drawing.Point(140, 328);
@@ -279,6 +292,7 @@
             // color12
             // 
             this.color12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.color12.Enabled = false;
             this.color12.FlatAppearance.BorderSize = 2;
             this.color12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color12.Location = new System.Drawing.Point(84, 328);
@@ -291,6 +305,7 @@
             // color11
             // 
             this.color11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(212)))), ((int)(((byte)(192)))));
+            this.color11.Enabled = false;
             this.color11.FlatAppearance.BorderSize = 2;
             this.color11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color11.Location = new System.Drawing.Point(28, 328);
@@ -306,7 +321,7 @@
             this.label6.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(22, 381);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(213, 64);
+            this.label6.Size = new System.Drawing.Size(226, 62);
             this.label6.TabIndex = 21;
             this.label6.Text = "\r\n关于\"QEMU Panel\"";
             // 
@@ -315,9 +330,9 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.linkLabel1.Location = new System.Drawing.Point(22, 729);
+            this.linkLabel1.Location = new System.Drawing.Point(23, 706);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(363, 26);
+            this.linkLabel1.Size = new System.Drawing.Size(399, 25);
             this.linkLabel1.TabIndex = 22;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://github.com/i3boyacc/QEMU-Panel";

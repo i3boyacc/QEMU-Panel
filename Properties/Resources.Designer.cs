@@ -63,26 +63,6 @@ namespace QEMU_Panel.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap _5 {
-            get {
-                object obj = ResourceManager.GetObject("5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap icon {
-            get {
-                object obj = ResourceManager.GetObject("icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap img1_blue {
             get {
                 object obj = ResourceManager.GetObject("img1-blue", resourceCulture);
@@ -93,9 +73,19 @@ namespace QEMU_Panel.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap vista {
+        internal static System.Drawing.Bitmap img1_green___副本___副本 {
             get {
-                object obj = ResourceManager.GetObject("vista", resourceCulture);
+                object obj = ResourceManager.GetObject("img1-green - 副本 - 副本", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap win7beta {
+            get {
+                object obj = ResourceManager.GetObject("win7beta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -8,7 +8,7 @@ namespace QEMU_Panel
     {
         /// <summary>
         /// 应用程序的主入口点。
-        /// </summary>
+        /// </summary
         [DllImport("user32.dll")] 
         private static extern void SetProcessDPIAware();
         //高DPI设置

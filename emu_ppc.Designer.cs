@@ -33,9 +33,6 @@
             this.add_arg = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.usb_dev = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.bios_file = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.boot_sel = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -51,20 +48,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.time_sec = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.time_min = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.time_hour = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.time_d = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.time_m = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.time_y = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.aud_mod = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -97,9 +80,9 @@
             this.label1.Font = new System.Drawing.Font("微软雅黑", 18F);
             this.label1.Location = new System.Drawing.Point(27, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 40);
+            this.label1.Size = new System.Drawing.Size(245, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "运行QEMU PowerPC";
+            this.label1.Text = "QEMU PowerPC";
             // 
             // label27
             // 
@@ -108,7 +91,7 @@
             this.label27.Location = new System.Drawing.Point(28, 2236);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(164, 26);
+            this.label27.Size = new System.Drawing.Size(164, 25);
             this.label27.TabIndex = 156;
             this.label27.Text = "其它自定义参数：";
             // 
@@ -137,6 +120,7 @@
             this.button6.TabIndex = 155;
             this.button6.Text = "确认并启动虚拟机";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // usb_dev
             // 
@@ -145,45 +129,11 @@
             this.usb_dev.Location = new System.Drawing.Point(34, 2177);
             this.usb_dev.Margin = new System.Windows.Forms.Padding(4);
             this.usb_dev.Name = "usb_dev";
-            this.usb_dev.Size = new System.Drawing.Size(577, 56);
+            this.usb_dev.Size = new System.Drawing.Size(596, 54);
             this.usb_dev.TabIndex = 145;
             this.usb_dev.Text = "启用USB设备及USB键鼠、触控板支持（PS/2键鼠支持将被禁用）\r\n(-usb -device usb-kbd -device usb-mouse -devic" +
     "e usb-tablet)";
             this.usb_dev.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.Silver;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button5.Location = new System.Drawing.Point(567, 2047);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 34);
-            this.button5.TabIndex = 144;
-            this.button5.Text = "浏览";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // bios_file
-            // 
-            this.bios_file.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.bios_file.Location = new System.Drawing.Point(39, 2047);
-            this.bios_file.Margin = new System.Windows.Forms.Padding(4);
-            this.bios_file.Name = "bios_file";
-            this.bios_file.Size = new System.Drawing.Size(519, 32);
-            this.bios_file.TabIndex = 143;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label10.Location = new System.Drawing.Point(35, 2019);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(337, 26);
-            this.label10.TabIndex = 146;
-            this.label10.Text = "第三方BIOS文件（如没有，则不填）：";
             // 
             // label32
             // 
@@ -191,7 +141,7 @@
             this.label32.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label32.Location = new System.Drawing.Point(35, 1943);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(582, 78);
+            this.label32.Size = new System.Drawing.Size(582, 75);
             this.label32.TabIndex = 139;
             this.label32.Text = "说明：\r\n如果进入启动菜单后您无法输入任何内容，请将输入法切换为英文输\r\n入模式。（系统启动后如无法输入任何内容也可以用此办法解决）";
             // 
@@ -217,7 +167,7 @@
             this.label31.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label31.Location = new System.Drawing.Point(35, 1909);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(183, 26);
+            this.label31.Size = new System.Drawing.Size(183, 25);
             this.label31.TabIndex = 140;
             this.label31.Text = "客户机第一启动项：";
             // 
@@ -227,7 +177,7 @@
             this.label30.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.label30.Location = new System.Drawing.Point(31, 2083);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(111, 64);
+            this.label30.Size = new System.Drawing.Size(110, 62);
             this.label30.TabIndex = 141;
             this.label30.Text = "\r\n附加参数";
             // 
@@ -237,7 +187,7 @@
             this.label41.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label41.Location = new System.Drawing.Point(34, 1281);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(107, 26);
+            this.label41.Size = new System.Drawing.Size(107, 25);
             this.label41.TabIndex = 138;
             this.label41.Text = "网卡型号：";
             // 
@@ -266,7 +216,7 @@
             this.net_mod.Location = new System.Drawing.Point(274, 1277);
             this.net_mod.Margin = new System.Windows.Forms.Padding(4);
             this.net_mod.Name = "net_mod";
-            this.net_mod.Size = new System.Drawing.Size(132, 34);
+            this.net_mod.Size = new System.Drawing.Size(132, 33);
             this.net_mod.TabIndex = 124;
             // 
             // net_host_port
@@ -293,7 +243,7 @@
             this.label40.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label40.Location = new System.Drawing.Point(36, 1239);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(164, 26);
+            this.label40.Size = new System.Drawing.Size(164, 25);
             this.label40.TabIndex = 137;
             this.label40.Text = "对应的主机端口：";
             // 
@@ -303,7 +253,7 @@
             this.label39.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label39.Location = new System.Drawing.Point(36, 1197);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(221, 26);
+            this.label39.Size = new System.Drawing.Size(221, 25);
             this.label39.TabIndex = 136;
             this.label39.Text = "需要映射的虚拟机端口：";
             // 
@@ -322,7 +272,7 @@
             this.label38.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label38.Location = new System.Drawing.Point(33, 1382);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(483, 52);
+            this.label38.Size = new System.Drawing.Size(494, 50);
             this.label38.TabIndex = 135;
             this.label38.Text = "\r\nVNC端口号（留空则禁用VNC，填写的端口号须>5900）";
             // 
@@ -333,7 +283,7 @@
             this.label37.Location = new System.Drawing.Point(35, 1320);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(111, 64);
+            this.label37.Size = new System.Drawing.Size(114, 62);
             this.label37.TabIndex = 134;
             this.label37.Text = "\r\nVNC连接";
             // 
@@ -344,7 +294,7 @@
             this.label36.Location = new System.Drawing.Point(35, 1044);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(183, 52);
+            this.label36.Size = new System.Drawing.Size(183, 50);
             this.label36.TabIndex = 133;
             this.label36.Text = "\r\n分辨率、颜色深度：";
             // 
@@ -355,144 +305,9 @@
             this.label35.Location = new System.Drawing.Point(33, 982);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(63, 64);
+            this.label35.Size = new System.Drawing.Size(62, 62);
             this.label35.TabIndex = 130;
             this.label35.Text = "\r\n显示";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label26.Location = new System.Drawing.Point(30, 1801);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(597, 104);
-            this.label26.TabIndex = 115;
-            this.label26.Text = "说明：\r\n1.如不填，则使用宿主机时间(-localhost)\r\n2.若填满前三空（年、月、日）才会启动自定义日期（此时设定的时间\r\n为0:00），若继续填满后三" +
-    "个空（时、分、秒）才会启用自定义时间。";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label25.Location = new System.Drawing.Point(29, 1710);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(185, 52);
-            this.label25.TabIndex = 114;
-            this.label25.Text = "\r\n手动设置BIOS时间：";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label22.Location = new System.Drawing.Point(628, 1767);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 26);
-            this.label22.TabIndex = 113;
-            this.label22.Text = "秒";
-            // 
-            // time_sec
-            // 
-            this.time_sec.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_sec.Location = new System.Drawing.Point(561, 1763);
-            this.time_sec.Margin = new System.Windows.Forms.Padding(4);
-            this.time_sec.Name = "time_sec";
-            this.time_sec.Size = new System.Drawing.Size(59, 32);
-            this.time_sec.TabIndex = 132;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label23.Location = new System.Drawing.Point(523, 1767);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(31, 26);
-            this.label23.TabIndex = 111;
-            this.label23.Text = "分";
-            // 
-            // time_min
-            // 
-            this.time_min.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_min.Location = new System.Drawing.Point(456, 1763);
-            this.time_min.Margin = new System.Windows.Forms.Padding(4);
-            this.time_min.Name = "time_min";
-            this.time_min.Size = new System.Drawing.Size(59, 32);
-            this.time_min.TabIndex = 131;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label24.Location = new System.Drawing.Point(417, 1767);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(31, 26);
-            this.label24.TabIndex = 110;
-            this.label24.Text = "时";
-            // 
-            // time_hour
-            // 
-            this.time_hour.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_hour.Location = new System.Drawing.Point(351, 1763);
-            this.time_hour.Margin = new System.Windows.Forms.Padding(4);
-            this.time_hour.Name = "time_hour";
-            this.time_hour.Size = new System.Drawing.Size(59, 32);
-            this.time_hour.TabIndex = 129;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label21.Location = new System.Drawing.Point(312, 1767);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(31, 26);
-            this.label21.TabIndex = 109;
-            this.label21.Text = "日";
-            // 
-            // time_d
-            // 
-            this.time_d.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_d.Location = new System.Drawing.Point(245, 1763);
-            this.time_d.Margin = new System.Windows.Forms.Padding(4);
-            this.time_d.Name = "time_d";
-            this.time_d.Size = new System.Drawing.Size(59, 32);
-            this.time_d.TabIndex = 128;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label20.Location = new System.Drawing.Point(207, 1767);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(31, 26);
-            this.label20.TabIndex = 108;
-            this.label20.Text = "月";
-            // 
-            // time_m
-            // 
-            this.time_m.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_m.Location = new System.Drawing.Point(140, 1763);
-            this.time_m.Margin = new System.Windows.Forms.Padding(4);
-            this.time_m.Name = "time_m";
-            this.time_m.Size = new System.Drawing.Size(59, 32);
-            this.time_m.TabIndex = 127;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label15.Location = new System.Drawing.Point(101, 1767);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(31, 26);
-            this.label15.TabIndex = 119;
-            this.label15.Text = "年";
-            // 
-            // time_y
-            // 
-            this.time_y.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.time_y.Location = new System.Drawing.Point(35, 1763);
-            this.time_y.Margin = new System.Windows.Forms.Padding(4);
-            this.time_y.Name = "time_y";
-            this.time_y.Size = new System.Drawing.Size(59, 32);
-            this.time_y.TabIndex = 126;
             // 
             // label19
             // 
@@ -500,7 +315,7 @@
             this.label19.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label19.Location = new System.Drawing.Point(35, 920);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(69, 52);
+            this.label19.Size = new System.Drawing.Size(69, 50);
             this.label19.TabIndex = 118;
             this.label19.Text = "\r\n型号：";
             // 
@@ -510,9 +325,14 @@
             this.aud_mod.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.aud_mod.FormattingEnabled = true;
             this.aud_mod.Items.AddRange(new object[] {
+            "PC speaker",
             "Intel HD Audio",
+            "CS4231A",
+            "Gravis Ultrasound GF1",
+            "Yamaha YM3812 (OPL2)",
             "Intel 82801AA AC97 Audio",
             "ENSONIQ AudioPCI ES1370",
+            "Creative Sound Blaster 16",
             "全部"});
             this.aud_mod.Location = new System.Drawing.Point(113, 940);
             this.aud_mod.Margin = new System.Windows.Forms.Padding(4);
@@ -526,7 +346,7 @@
             this.label14.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.label14.Location = new System.Drawing.Point(32, 1648);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 64);
+            this.label14.Size = new System.Drawing.Size(110, 62);
             this.label14.TabIndex = 116;
             this.label14.Text = "\r\n固件设置";
             // 
@@ -536,7 +356,7 @@
             this.label13.Font = new System.Drawing.Font("微软雅黑", 11F);
             this.label13.Location = new System.Drawing.Point(36, 1140);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(582, 52);
+            this.label13.Size = new System.Drawing.Size(589, 50);
             this.label13.TabIndex = 117;
             this.label13.Text = "\r\n使用-net user模式连接，并将虚拟机的某端口转换到主机的某端口。";
             // 
@@ -546,7 +366,7 @@
             this.label12.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.label12.Location = new System.Drawing.Point(34, 1077);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 64);
+            this.label12.Size = new System.Drawing.Size(62, 62);
             this.label12.TabIndex = 112;
             this.label12.Text = "\r\n网络";
             // 
@@ -554,11 +374,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label9.Location = new System.Drawing.Point(30, 845);
+            this.label9.Location = new System.Drawing.Point(28, 717);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 64);
+            this.label9.Size = new System.Drawing.Size(134, 62);
             this.label9.TabIndex = 107;
-            this.label9.Text = "\r\n声卡";
+            this.label9.Text = "\r\n显示与声音";
             // 
             // cpu_mode
             // 
@@ -566,22 +386,22 @@
             this.cpu_mode.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cpu_mode.FormattingEnabled = true;
             this.cpu_mode.Items.AddRange(new object[] {
-            "arm32",
-            "arm64"});
-            this.cpu_mode.Location = new System.Drawing.Point(107, 277);
+            "ppc",
+            "ppc64"});
+            this.cpu_mode.Location = new System.Drawing.Point(107, 252);
             this.cpu_mode.Margin = new System.Windows.Forms.Padding(4);
             this.cpu_mode.Name = "cpu_mode";
-            this.cpu_mode.Size = new System.Drawing.Size(120, 34);
+            this.cpu_mode.Size = new System.Drawing.Size(120, 33);
             this.cpu_mode.TabIndex = 100;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label34.Location = new System.Drawing.Point(27, 280);
+            this.label34.Location = new System.Drawing.Point(27, 255);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(69, 26);
+            this.label34.Size = new System.Drawing.Size(69, 25);
             this.label34.TabIndex = 99;
             this.label34.Text = "架构：";
             // 
@@ -592,15 +412,14 @@
             this.label33.Location = new System.Drawing.Point(29, 64);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(603, 130);
+            this.label33.Size = new System.Drawing.Size(633, 100);
             this.label33.TabIndex = 98;
-            this.label33.Text = "\r\n注意：\r\n1. 不正确的设置会导致模拟器无法启动，且可能无任何提示。\r\n2. 本设置内容是为QEMU2.9版本设置的。如果您运行的不是最新版本的\r\nQEMU，" +
-    "某些设置项可能不可用，此时请不要设置不支持的选项。";
+            this.label33.Text = "\r\n注意：\r\n1. 不正确的设置会导致QEMU无法启动（可能无提示）。\r\n2. 本程序专为QEMU2.9而设计，部分功能可能不兼容其它版本的QEMU。";
             // 
             // mem_size
             // 
             this.mem_size.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.mem_size.Location = new System.Drawing.Point(220, 446);
+            this.mem_size.Location = new System.Drawing.Point(220, 416);
             this.mem_size.Margin = new System.Windows.Forms.Padding(4);
             this.mem_size.Name = "mem_size";
             this.mem_size.Size = new System.Drawing.Size(119, 32);
@@ -613,7 +432,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button3.Location = new System.Drawing.Point(550, 738);
+            this.button3.Location = new System.Drawing.Point(551, 683);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 34);
@@ -628,7 +447,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.button2.Location = new System.Drawing.Point(550, 674);
+            this.button2.Location = new System.Drawing.Point(551, 619);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 34);
@@ -646,7 +465,7 @@
             "G2",
             "G3",
             "G4"});
-            this.cpu_model.Location = new System.Drawing.Point(107, 319);
+            this.cpu_model.Location = new System.Drawing.Point(107, 294);
             this.cpu_model.Margin = new System.Windows.Forms.Padding(4);
             this.cpu_model.Name = "cpu_model";
             this.cpu_model.Size = new System.Drawing.Size(120, 32);
@@ -656,9 +475,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label8.Location = new System.Drawing.Point(29, 323);
+            this.label8.Location = new System.Drawing.Point(29, 298);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 26);
+            this.label8.Size = new System.Drawing.Size(69, 25);
             this.label8.TabIndex = 90;
             this.label8.Text = "型号：";
             // 
@@ -666,9 +485,9 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label18.Location = new System.Drawing.Point(26, 189);
+            this.label18.Location = new System.Drawing.Point(26, 164);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 64);
+            this.label18.Size = new System.Drawing.Size(63, 62);
             this.label18.TabIndex = 96;
             this.label18.Text = "\r\nCPU";
             // 
@@ -676,10 +495,10 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label16.Location = new System.Drawing.Point(28, 710);
+            this.label16.Location = new System.Drawing.Point(29, 655);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(145, 26);
+            this.label16.Size = new System.Drawing.Size(145, 25);
             this.label16.TabIndex = 95;
             this.label16.Text = "光盘镜像位置：";
             // 
@@ -688,7 +507,7 @@
             this.cdr_img.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cdr_img.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.cdr_img.Location = new System.Drawing.Point(32, 738);
+            this.cdr_img.Location = new System.Drawing.Point(33, 683);
             this.cdr_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cdr_img.Name = "cdr_img";
             this.cdr_img.Size = new System.Drawing.Size(511, 32);
@@ -699,7 +518,7 @@
             this.hdd_img.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.hdd_img.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.hdd_img.Location = new System.Drawing.Point(32, 674);
+            this.hdd_img.Location = new System.Drawing.Point(33, 619);
             this.hdd_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdd_img.Name = "hdd_img";
             this.hdd_img.Size = new System.Drawing.Size(511, 32);
@@ -709,9 +528,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label6.Location = new System.Drawing.Point(26, 596);
+            this.label6.Location = new System.Drawing.Point(27, 541);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(430, 78);
+            this.label6.Size = new System.Drawing.Size(430, 75);
             this.label6.TabIndex = 94;
             this.label6.Text = "\r\n注意：如某项留空，客户机将不会安装该项硬件。\r\n硬盘镜像位置：";
             // 
@@ -719,9 +538,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label7.Location = new System.Drawing.Point(26, 534);
+            this.label7.Location = new System.Drawing.Point(28, 479);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 64);
+            this.label7.Size = new System.Drawing.Size(62, 62);
             this.label7.TabIndex = 93;
             this.label7.Text = "\r\n储存";
             // 
@@ -731,19 +550,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label5.Location = new System.Drawing.Point(29, 484);
+            this.label5.Location = new System.Drawing.Point(29, 454);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(596, 52);
+            this.label5.Size = new System.Drawing.Size(392, 25);
             this.label5.TabIndex = 92;
-            this.label5.Text = "警告：若内存设置得太大，QEMU可能会无法启动（对于32位QEMU）\r\n或机器卡死（对于小内存的客户机）。";
+            this.label5.Text = "警告：若设置值太大，客户机可能无法启动。\r\n";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.label3.Location = new System.Drawing.Point(29, 425);
+            this.label3.Location = new System.Drawing.Point(29, 395);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 52);
+            this.label3.Size = new System.Drawing.Size(176, 50);
             this.label3.TabIndex = 91;
             this.label3.Text = "\r\n大小（单位MB）：";
             // 
@@ -751,9 +570,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label4.Location = new System.Drawing.Point(26, 358);
+            this.label4.Location = new System.Drawing.Point(26, 333);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 64);
+            this.label4.Size = new System.Drawing.Size(166, 62);
             this.label4.TabIndex = 97;
             this.label4.Text = "\r\n内存（RAM）";
             // 
@@ -799,9 +618,6 @@
             this.Controls.Add(this.add_arg);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.usb_dev);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.bios_file);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.boot_sel);
             this.Controls.Add(this.label31);
@@ -818,20 +634,6 @@
             this.Controls.Add(this.vga_mod);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.label35);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.time_sec);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.time_min);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.time_hour);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.time_d);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.time_m);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.time_y);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.aud_mod);
             this.Controls.Add(this.label14);
@@ -870,9 +672,6 @@
         public System.Windows.Forms.TextBox add_arg;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.CheckBox usb_dev;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox bios_file;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ComboBox boot_sel;
         private System.Windows.Forms.Label label31;
@@ -888,20 +687,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox time_sec;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox time_min;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox time_hour;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox time_d;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox time_m;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox time_y;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox aud_mod;
         private System.Windows.Forms.Label label14;

@@ -53,7 +53,7 @@ namespace QEMU_Panel
             btn_set.ForeColor
                 = btn_arm.ForeColor
                 = btn_ppc.ForeColor
-                = Color.FromArgb(222, 222, 222);
+                = Color.FromArgb(128, 128, 128);
 
             if (Settings1.Default.isblack == 0)//设置默认颜色，白色或黑色
             {
@@ -75,13 +75,13 @@ namespace QEMU_Panel
             if (Settings1.Default.isblack == 0)//设置默认颜色，白色或黑色
             {
                 this.BackColor = Color.White;
-                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.White;
+                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = panel3.BackColor = Color.White;
                 x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.Black;
             }
             else
             {
                 this.BackColor = Color.FromArgb(24, 24, 24);
-                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = Color.FromArgb(24, 24, 24);
+                x86.BackColor = arm.BackColor = ppc.BackColor = set.BackColor = panel3.BackColor = Color.FromArgb(24, 24, 24);
                 x86.ForeColor = arm.ForeColor = ppc.ForeColor = set.ForeColor = Color.FromArgb(233, 233, 233);
             }
         }
@@ -107,10 +107,9 @@ namespace QEMU_Panel
             btn_set.ForeColor
                 = btn_arm.ForeColor
                 = btn_ppc.ForeColor
-                = Color.FromArgb(222,222,222);
+                = Color.FromArgb(128,128,128);
 
-            btn_x86.ForeColor = Color.White;
-            btn_x86.BackColor = Color.FromArgb(160, 233, 233, 233);
+            btn_x86.ForeColor = Color.Black;
             selected = 0;//用数字表示目前选中的控件对应的按钮，以便后续使用
             panel3.AutoScrollMinSize = new Size(10, x86.Height);//设置滚动条滚动长度
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
@@ -118,6 +117,7 @@ namespace QEMU_Panel
 
         private void btn_arm_Click(object sender, EventArgs e)
         {
+            /*
             arm.Visible = true;
             set.Visible = false;
             x86.Visible = false;
@@ -126,12 +126,13 @@ namespace QEMU_Panel
             btn_set.ForeColor
                 = btn_ppc.ForeColor
                 = btn_x86.ForeColor
-                = Color.FromArgb(222, 222, 222);
-            btn_arm.ForeColor = Color.White;
-            btn_arm.BackColor = Color.FromArgb(160, 233, 233, 233);
+                = Color.FromArgb(128, 128, 128);
+            btn_arm.ForeColor = Color.Black;
             selected = 1;
             panel3.AutoScrollMinSize = new Size(10, arm.Height);
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
+            */
+            MessageBox.Show("本功能正在开发中，敬请期待！", "QEMU Panel-arm", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn_ppc_Click(object sender, EventArgs e)
@@ -142,9 +143,8 @@ namespace QEMU_Panel
             x86.Visible = false;
             
             btn_set.ForeColor = btn_x86.ForeColor = btn_arm.ForeColor
-                    = Color.FromArgb(222, 222, 222);
-            btn_ppc.ForeColor = Color.White;
-            btn_ppc.BackColor = Color.FromArgb(160, 233, 233, 233);
+                    = Color.FromArgb(128, 128, 128);
+            btn_ppc.ForeColor = Color.Black;
             selected = 2;
             panel3.AutoScrollMinSize = new Size(10, ppc.Height);
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
@@ -159,9 +159,8 @@ namespace QEMU_Panel
             btn_x86.ForeColor
                 = btn_arm.ForeColor
                 = btn_ppc.ForeColor
-                = Color.FromArgb(222, 222, 222);
-            btn_set.ForeColor = Color.White;
-            btn_set.BackColor = Color.FromArgb(160, 233, 233, 233);
+                = Color.FromArgb(128, 128, 128);
+            btn_set.ForeColor = Color.Black;
             selected = 3;
             panel3.AutoScrollMinSize = new Size(10, set.Height);
             change_color(Settings1.Default.color_r, Settings1.Default.color_g, Settings1.Default.color_b);
